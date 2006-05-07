@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"   
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+<!ENTITY author "<ulink url='mailto:johnson.AT.worldhello.net'>Johnson</ulink>">
+<!ENTITY orgname "<ulink url='http://www.worldhello.net'>worldhello.net</ulink>">
+<!ENTITY sect1    SYSTEM "newsservice.xml">
+<!ENTITY % vers   SYSTEM "version.xml">
+%vers;
+]>
+<article id="index">
+<articleinfo>
+<title>知识管理</title>
+<subtitle>NewsGroup Howto</subtitle>
+<author><firstname>鑫</firstname><surname>蒋</surname></author>
+<affiliation>
+<orgname>&orgname;</orgname>
+<address><email>johnson.AT.worldhello.net</email></address>
+</affiliation>
+<revhistory>
+<!--revision>
+<revnumber>$Revision: 1.38 $</revnumber>
+<date>$Date: 2004/02/03 13:17:38 $</date>
+<authorinitials>$Author: jiangxin $</authorinitials>
+<revremark>...</revremark>
+</revision-->
+<revision>
+<revnumber>0.5</revnumber>
+<date>2003/07/16</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>答复黄青涛的问题，重写<link linkend="innd-acl">相关章节</link>。</revremark>
+</revision>
+<revision>
+<revnumber>0.4</revnumber>
+<date>2003/03/25</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>网友 annie 配置 INN 遇到口令验证方面问题，重写<link linkend="innd-acl">相关章节</link>。</revremark>
+</revision>
+<revision>
+<revnumber>0.3</revnumber>
+<date>2003/03/08</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>增加用 suck 主动从远程新闻组服务器取信</revremark>
+</revision>
+<revision>
+<revnumber>0.2</revnumber>
+<date>2003/03/02</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>加入章节：深入INN</revremark>
+</revision>
+<revision>
+<revnumber>0.1</revnumber>
+<date>2002/10/14</date>
+<authorinitials>jiangxin</authorinitials>
+<revremark>构建 news 服务器</revremark>
+</revision>
+</revhistory>
+<abstract>
+<para>
+目前介绍软件工程和项目管理的书是越来越多了。遍历各家之说，体会最深的是两个字：“沟通”。没有沟通，开发人员单枪匹马，重复着“前辈们”走过的路，缓慢的成长着。没有沟通，测试和开发团队就在没完没了的争吵中迎接项目的延期。没有沟通，部门之间的鸿沟足可以吓退客户。没有沟通，公司的决策人还在期盼着项目的成功的那一天，而不知道危险已经临近。作为 IT 从业人员，如果我们在不断为别人提供软件产品来提高工作效率，而自己却不能利用软件来改进项目的沟通，实在是一种悲哀。
+</para>
+<para>
+本文先探讨通过建立新闻组服务器作为项目的沟通管理工具的途径和方法。
+</para>
+<para>
+（编译自版本: &doc.revision;，最后更新时间: &doc.lastchange;）
+</para>
+</abstract>
+</articleinfo>
+
+&sect1;
+
+</article>

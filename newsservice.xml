@@ -1,0 +1,2744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sect1 id="why-inn"><title>为什么要使用新闻组？</title>
+<sect2><title>企业内部使用NEWS服务的优势</title>
+<itemizedlist>
+<listitem>
+<para>
+News vs. Email
+</para>
+<para>
+Email 保存在客户端，只有收件人能够查看和保存，而 NEWS 存储在服务器端，
+可以随时查阅。
+</para>
+<para>
+设想如果团队的知识分散保存在各个人的邮箱里，当团队中加入了新成员，
+如何能够让知识传递到新员工哪里？难道要把 Email 重新传递一份？
+</para>
+</listitem>
+<listitem>
+<para>
+News vs. Document
+</para>
+<para>
+News 可以进行知识传递，文档也可以，中华五千年的文明就是通过文字、书籍来
+传播的。News的优越性在于时效性和便于沟通，文档的优越性在于条理性和归档保存。
+</para>
+<para>
+News 的精华需要及时提炼出相应的精华文档。而文档的格式呢？推荐用 DocBook，参见：<ulink url="http://www.worldhello.net">Johnson's DocBook Homepage</ulink>。
+</para>
+</listitem>
+<listitem>
+<para>
+News vs. mail-list
+</para>
+<para>
+群发的 mail-list 将很浪费网路资源和其它各方面的资源，而 USENET news 的特点是
+将文章集中在一个host，允许订阅者定自己想读的提供 index，cross-referencing(cross post)，
+和砍掉过期的文章的功能，这样可以减轻网路的负担，因为当你想看
+news 时才要连到 server 去看，而且也可以挑自己想看的东西，不必像 mailing list 
+一样要把所有的 messages 照单全收。
+</para>
+<para>
+News 具有线索和图形化的客户端支持，而通过 mail-list 订阅的邮件组则没有了线索，
+只是在邮箱中按照发布时间顺序排列。
+</para>
+<para>
+但是 mail-list 也具有 News没有的优势。News的使用方式是：“拉”，mail-list是“推”。
+如果news server位于内部网络，而且拒绝外部访问，则 mail-list 是外部访问 新闻组的唯一方式。
+</para>
+<para>
+因此，可以把邮件列表拿来和新闻组服务器协同工作，互为补充。
+</para>
+</listitem>
+<listitem>
+<para>
+News vs. bbs
+</para>
+<para>
+News 的实时性没有 bbs 好，但是客户端不必登录到服务器，安全性相对要好；
+</para>
+<para>
+News 服务可以借助 mail-list，实现“推”的技术；
+</para>
+<para>
+News 可以提供分布式服务，知道大名鼎鼎的 USEnet 么？
+</para>
+</listitem>
+
+</itemizedlist>
+</sect2>
+
+<sect2><title>企业内部新闻服务的用途</title>
+<para>
+四个字：知识管理。
+</para>
+<itemizedlist>
+<listitem>
+<para>
+技术讨论
+</para>
+<para>
+大家都想坐在高手的旁边，就是希望开发中遇到的困难能够尽快解决。与其排座位而让我绞尽脑汁，不如进一步完善内部沟通机制。
+</para>
+</listitem>
+<listitem>
+<para>
+技术跟踪
+</para>
+<para>
+我们每个人都对我们的产品的发展都会有些想法，NewsGroup将是一个不作的归纳总结的地方。
+</para>
+</listitem>
+<listitem>
+<para>
+软件发布
+</para>
+<para>
+研发和测试的接口，是我们的自动编译系统＋Bug Tracking系统。
+但是我们的 Release Note 的规范一直没有很好的完善起来。不是由于开发
+人员不遵守开发规范，而是制度制定的不合理。
+也许 ReleaseNote 新闻组，加上 docbook 格式的文档，会是我们的这个工作
+能够走上正轨。
+</para>
+<para>
+在新闻组中建立一个发布专版，每一个功能变更，界面变化，bugfix，都以 news 的方式
+提交到这个版中；编译工程师，在完成一次版本提升，也在此版发布一条信息；
+文档工程师，根据两次版本提升之间的 news，组织 ReleaseNotes 的内容。
+</para>
+</listitem>
+<listitem>
+<para>
+攻击和测试技术论坛
+</para>
+<para>
+研发的测试技术正处于持续的改善过程中，开发和收集的新工具，越来越多，除了
+内部讲座和内部培训外，也需要一个论坛，来统一组织。
+</para>
+</listitem>
+<listitem>
+<para>
+FAQ
+</para>
+<para>
+除了公司范围的入职培训外，研发内部还为新员工准备了相应的技术培训。
+但也存在着培训教师的讲课水平不一致，讲义不完备，如何持久培训的问题。
+</para>
+<para>
+针对开发必须掌握的专题，分别开辟相应的 FAQ NewsGroup，可以减轻培训教师的负担。
+</para>
+</listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="history"><title>发展历史</title>
+<para>
+USENET在1979年末，UNIX V7公布、引进UUCP後不久诞生。由Duke University
+两位研究生Tom Truscott 及Jim Ellis提出构想、用来在UNIX间交换讯息。由南加
+大的Steve Bellovin设计。Steve Daniel用Ｃ程式语言重新改写，经Tom Truscott
+修改後为第一个正式版本(RELEASE A)。
+</para>
+<para>
+1981年Berkeley的研究生Mark Horton及高中生Matt Glickman重新改写，以增
+加功能，并且处理日益增加的News流量。此版本为B ── B News。
+</para>
+<para>
+在Center for Seismic Studies的Rick Adams接替维护B News的工作。在1986
+年年末，B News 2.11 公布，奠定了目前USENET的规模。现在B News已经退休了，
+为C News或INN所取代。
+</para>
+<para>
+1986年三月，公布了一个新的套装程式，使用一种新的传输News的协定
+Network News Transfer Protocol (NNTP) 。此协定使用TCP/IP的方法交换资料，
+而非传统使用UUCP的方法。
+</para>
+<para>
+1987年秋，C News公布。
+</para>
+<para>
+1992年八月二十InterNetNews公布 (INN)。
+</para>
+<para>
+目前最常用的 NEWS Server 有 CNEWS和INN。
+</para>
+<para>
+至于新闻组中的中文发展的沉浮，可以参考这篇文档<ulink url="http://www.epubcn.com/readings/wangyouwenji/150/intropage/w150131.htm">《新闻组是什么？》</ulink>。
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="tools"><title>相关工具及资料</title>
+<itemizedlist>
+<listitem>
+<para>
+INN 2.3.3
+</para>
+<para>
+<ulink url="http://www.isc.org/products/INN/">Download ...</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+Sendmail 8.12.8
+</para>
+<para>
+<ulink url="http://www.sendmail.org">Download ...</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+Majordomo 1.94.5
+</para>
+<para>
+<ulink url="http://www.greatcircle.com/majordomo/">Download ...</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+MHonArc
+</para>
+<para>
+<ulink url="http://www.mhonarc.org">Download ...</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+htdig
+</para>
+<para>
+<ulink url="http://www.htdig.org/">Download ...</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+MAILMAN
+</para>
+<para>
+<ulink url="http://www.list.org">Download ...</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+MAIL-ARCHIVE
+</para>
+<para>
+<ulink url="http://www.mail-archive.com/about.html">Download ...</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+Apache
+</para>
+<para>
+<ulink url="http://www.apache.org">Download ...</ulink>
+</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<sect1 id="install-inn"><title>INN 安装配置初步</title>
+<para>
+这里介绍用 INN 构建具备基本功能的新闻服务器。
+</para>
+<orderedlist>
+<listitem>
+<para>
+<ulink url="ftp://ftp.isc.org/isc/inn/inn-2.3.3.tar.gz">Download inn 2.3.3...</ulink>
+</para>
+</listitem>
+
+<listitem>
+<para>
+设置 news 用户帐号
+</para>
+<para>
+确认系统中包含 news 用户和 news 组，如果没有，需要添加：
+</para>
+<screen>
+$ <command>groupadd news</command>
+$ <command>useradd -g news -d /usr/local/news</command>
+</screen>
+</listitem>
+
+<listitem>
+<para>
+安装
+</para>
+<note>
+<para>
+建议perl support，这样会安装一些维护工具，如 scanspool等。
+</para>
+</note>
+<screen>
+$ <command>tar zxvf inn-2.3.3.tar.gz</command>
+$ <command>cd inn-2.3.3/</command>
+$ <command>./configure --with-perl</command>
+$ <command>make &amp;&amp; make install</command>
+
+    Do not forget to update your cron entries, and also run
+    makedbz if you need to.  If this is a first-time installation
+    a minimal active file has been installed.  You will need to
+    touch history and run "makedbz -i" to initialize the history
+    database.  See INSTALL for more information.
+</screen>
+<para>
+缺省安装在 /usr/local/news 目录下，并已经设置好相应权限。
+</para>
+</listitem>
+
+<listitem>
+<para>
+设定新闻组
+</para>
+<itemizedlist>
+<listitem>
+<para>
+db/active
+</para>
+<para>
+the list of newsgroups you carry.
+</para>
+<screen>
+$ <command> cat /usr/local/news/db/active </command>
+control 0000000000 0000000001 n
+control.cancel 0000000000 0000000001 n
+control.checkgroups 0000000000 0000000001 n
+control.newgroup 0000000000 0000000001 n
+control.rmgroup 0000000000 0000000001 n
+junk 0000000000 0000000001 n
+</screen>
+<warning>
+<para>
+active 文件中至少要有 control 和 junk 两行。
+</para>
+</warning>
+</listitem>
+<listitem>
+<para>
+db/active.times
+</para>
+<para>
+初始为空文件。该文件被有些 news 客户端用来检查是否有新邮件组。该文件由 innd/ctlinnd 自动维护。
+</para>
+</listitem>
+<listitem>
+<para>
+db/newsgroups 
+</para>
+<para>
+该文件记录各个新闻组的描述。格式如下：
+</para>
+<screen>
+<![CDATA[
+control                 Various control messages (no posting).
+control.cancel          Cancel messages (no posting).
+control.checkgroups     Hierarchy check control messages (no posting).
+control.newgroup        Newsgroup creation control messages (no posting).
+control.rmgroup         Newsgroup removal control messages (no posting).
+junk                    Unfiled articles (no posting).
+测试灌水                For newbie test.
+local.announce          Announcement for all.
+]]>
+</screen>
+</listitem>
+<listitem>
+<para>
+完整性检查
+</para>
+<para>
+可以用命令<command>scanspool -v</command>，检验 active 文件和 spool中文件的正确配置。
+</para>
+<para>
+在news服务启用状态维护 active 文件，需要：
+</para>
+<screen>
+$ <command>ctlinnd pause 'edit active'</command>
+$ <command>vi active</command>
+$ <command>inncheck</command>
+$ <command>scanspool</command>
+$ <command>ctlinnd reload active 'new active'</command>
+$ <command>ctlinnd go 'edit active'</command>
+</screen>
+</listitem>
+</itemizedlist>
+</listitem>
+
+<listitem>
+<para>
+inn 基本资料配置文件：inn.conf
+</para>
+<para>
+修改文件<filename>etc/inn.conf</filename>，注意其中的如下内容：
+</para>
+<screen>
+fromhost:               foo0.com.tw
+pathhost:               foo0.com.tw
+organization:           公司大名 (Foo's Co.,)
+server:                 foo0.com.tw
+domain:                 com.tw
+
+hiscachesize:           256
+artcutoff:              60
+maxartsize:             100000
+localmaxartsize:        100000
+enableoverview:         true
+ovmethod:               tradindexed
+spoolfirst:             false
+</screen>
+<note>
+<para>
+执行<command>inncheck</command>，检查 inn.conf 配置
+</para>
+</note>
+</listitem>
+
+<listitem>
+<para>
+文章过期策略设置
+</para>
+<para>
+修改配置文件 <filename>expire.ctl</filename> 如下：
+</para>
+<screen>
+/remember/:10
+
+##  This entry uses the syntax appropriate when groupbaseexpiry is true in inn.conf.
+*:A:10:never:never
+
+##  This is an entry based on storage class, used when groupbaseexpiry is false.
+#0:10:never:never
+</screen>
+<para>
+详细说明参见：<link linkend="inn-expire">INN 过期设置</link>。
+</para>
+</listitem>
+
+<listitem>
+<para>
+初始化 history 文件
+</para>
+<screen>
+$ <command>cd /usr/local/news/db</command>
+$ <command>touch history</command>
+$ <command>../bin/makedbz -i</command>
+$ <command>for i in history.n*; do i=${i#history.n.}; mv history.n.$i history.$i ;done</command>
+$ <command>chown news:news history*</command>
+$ <command>chmod 644 history*</command>
+</screen>
+<para>
+如果已存在的数据，可以用如下命令重建 history 和 overview 数据库。
+</para>
+<screen>
+$ <command>ctlinnd throttle "throttle due to maintaining"</command>
+$ <command>scanspool</command>                                                                            <co id="co.rebuild.scanspool"/>
+$ <command>makehistory -F -b -I</command>                                                                 <co id="co.rebuild.history"/>
+$ <command>cat /usr/local/news/db/history | wc -l </command>
+$ <command>find /usr/local/news/spool/articles/ -type f | wc -l</command>
+$ <command>cd /usr/local/news/db</command>
+$ <command>../bin/makedbz -i</command>
+$ <command>for i in history.n*; do i=${i#history.n.}; mv history.n.$i history.$i ;done</command>
+
+$ <command>rm -rf /usr/local/news/spool/overview/*</command>                                              <co id="co.rebuild.delovdb"/>
+$ <command>makehistory -O -F -b -x</command>                                                              <co id="co.rebuild.overview"/>
+$ <command>find /usr/local/news/spool/articles/ -type f | wc -l</command>
+$ <command>find /usr/local/news/spool/overview/ -type f -name "*.DAT" -exec cat {} \;  | wc -l</command>
+
+$ <command>ctlinnd go "maintaining success"</command>
+</screen>
+<calloutlist>
+<callout arearefs="co.rebuild.scanspool">
+<para>
+确认 active 中的 himark 和 lowmark 是否正确设置。参见：<link linkend="news-conf-active">active 文件格式</link>。
+</para>
+</callout>
+<callout arearefs="co.rebuild.history">
+<para>
+重建 history 文件。参见：<link linkend="help-cmd-makehistory">makehistory 命令参考</link>。
+</para>
+</callout>
+<callout arearefs="co.rebuild.delovdb">
+<para>
+重建overview 数据库前,先要将已有 overview 数据库删除。
+</para>
+</callout>
+<callout arearefs="co.rebuild.overview">
+<para>
+重建 overview 数据库。参见：<link linkend="help-cmd-makehistory">makehistory 命令参考</link>。
+</para>
+</callout>
+</calloutlist>
+</listitem>
+
+<listitem>
+<para>
+设置喂信方式
+</para>
+<para>
+如果没有另外的外部喂信者，照此配置 <filename>incoming.conf</filename>。
+</para>
+<screen>
+<![CDATA[
+peer ME {
+  hostname:         "localhost, 127.0.0.1"
+}
+]]>
+</screen>
+
+<para>
+即使不向外部喂信，仍然需要配置 <filename>newsfeeds</filename>。
+</para>
+<screen>
+ME:*,!junk::
+</screen>
+<para>
+含义为：外发除了 junk 外所有新闻组，并且允许接收所有的 distributions （该配置中distributions部分省略）。虽然我们可能不向外部喂信，但是仍然配置外发所有新闻组，因为除了用于向外喂信之外，还用于和配置其它程序通讯，如 news2mail。
+</para>
+
+</listitem>
+
+<listitem>
+<para>
+配置 syslog，记录日志
+</para>
+<screen>
+$ <command>touch /usr/local/news/log/news.crit</command>
+$ <command>touch /usr/local/news/log/news.err</command>
+$ <command>touch /usr/local/news/log/news.notice</command>
+$ <command>chown news /usr/local/news/log/news.*</command>
+$ <command>chgrp news /usr/local/news/log/news.*</command>
+$ <command>cat &gt;&gt;  /etc/syslog.conf &lt;&lt; END </command>
+news.crit           /usr/local/news/log/news.crit
+news.err            /usr/local/news/log/news.err
+news.notice         /usr/local/news/log/news.notice
+END
+
+$ <command>kill -1 `cat /var/run/syslog.pid`</command>
+</screen>
+</listitem>
+
+<listitem>
+<para>
+启动 news 服务 <command>su news -c /usr/local/news/bin/rc.news</command>
+</para>
+<para>
+停止 news 服务 <command>su news -c /usr/local/news/bin/rc.news stop</command>
+</para>
+<para>
+以SRV4方式启动。
+</para>
+<screen>
+<![CDATA[
+#!/bin/sh
+# Script to control news server
+#
+#
+PATH=${SAMBADIR}/bin:${SAMBADIR}/sbin:/bin:/usr/sbin:/usr/bin
+export PATH
+case "$1" in
+'start')
+        echo "starting news server ...  "
+        su news -c /usr/local/news/bin/rc.news
+        echo done
+        ;;
+'stop')
+        echo "stopping news server ...  "
+        su news -c "/usr/local/news/bin/rc.news stop"
+        echo done
+        ;;
+*)
+        echo "usage: news.sh {start | stop}"
+        ;;
+esac
+]]>
+</screen>
+</listitem>
+<listitem id="nntp-test">
+<para>
+测试新闻服务器
+</para>
+<para>
+在服务器端将新闻组的日志文件输出到控制台，用以对服务器进行实时诊断:
+</para>
+<screen>
+# <command>tail -f /usr/local/news/log/news/news.notice &amp;</command>
+# <command>tail -f /usr/local/news/log/news/news.err &amp;</command>
+# <command>tail -f /usr/local/news/log/news/news.crit &amp;</command>
+</screen>
+<para>
+在客户端使用 telnet 连接服务器，测试新闻组:
+</para>
+<screen>
+$ <command>su news -c /usr/local/news/bin/rc.news</command> <co id="co.nntp.test.start"/>
+Starting innd.
+Scheduled start of /usr/local/news/bin/innwatch.
+$ <command>telnet 127.0.0.1 nntp</command> <co id="co.nntp.test.telnet"/>
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+200 news.worldhello.net InterNetNews server INN 2.3.3 ready
+<command>list newsgroups</command> <co id="co.nntp.test.list"/>
+215
+control                 Various control messages (no posting).
+control.cancel          Cancel messages (no posting).
+control.checkgroups     Hierarchy check control messages (no posting).
+control.newgroup        Newsgroup creation control messages (no posting).
+control.rmgroup         Newsgroup removal control messages (no posting).
+cn.comp.book		Sucked from cn99
+junk                    Unfiled articles (no posting).
+.
+<command>listgroup control</command> <co id="co.nntp.test.lcontrol.na"/>
+411 No such group control
+<command>listgroup cn.comp.book</command> <co id="co.nntp.test.lcn.na"/>
+211 Article list follows
+1
+...
+21
+.
+<command>authinfo user johnson</command> <co id="co.nntp.test.login.name"/>
+381 PASS required
+<command>authinfo pass mypassword</command> <co id="co.nntp.test.login.passwd"/>
+281 Ok
+<command>listgroup control</command>
+211 Article list follows <co id="co.nntp.test.lcontrol.avail"/>
+.
+<command>quit</command> <co id="co.nntp.test.quit"/>
+205 .
+Connection closed by foreign host.
+</screen>
+<calloutlist>
+<callout arearefs="co.nntp.test.start">
+<para>
+启动 INND
+</para>
+</callout>
+<callout arearefs="co.nntp.test.telnet">
+<para>
+使用 telnet 连接服务器 nntp(119) 端口
+</para>
+</callout>
+<callout arearefs="co.nntp.test.list">
+<para>
+显示 newsgroups 文件（新闻组开板表述文件）
+</para>
+</callout>
+<callout arearefs="co.nntp.test.lcontrol.na">
+<para>
+在没有通过口令验证的情况下，control 板块不可见
+</para>
+</callout>
+<callout arearefs="co.nntp.test.lcn.na">
+<para>
+在没有通过口令验证的情况下，cn.comp.book 板块可见
+</para>
+</callout>
+<callout arearefs="co.nntp.test.login.name">
+<para>
+登录新闻组服务器，输入用户名
+</para>
+</callout>
+<callout arearefs="co.nntp.test.login.passwd">
+<para>
+登录新闻组服务器，输入口令
+</para>
+</callout>
+<callout arearefs="co.nntp.test.lcontrol.avail">
+<para>
+当用户 johnson 在通过口令验证的情况下，control 板块可见
+</para>
+</callout>
+<callout arearefs="co.nntp.test.quit">
+<para>
+退出
+</para>
+</callout>
+</calloutlist>
+
+</listitem>
+
+<listitem>
+<para>
+设置 crontab，完成诸如过期文章删除、日志回滚等工作。
+</para>
+<para>
+修改 crontab 如下：
+</para>
+<screen>
+0 3 * * * su -c "/usr/local/news/bin/news.daily delayrm" news
+0 7 * * 7 su -c '/usr/local/news/bin/expireover -s' news
+#0,10,20,30,40,50 * * * * /usr/local/news/bin/nntpsend
+</screen>
+<para>
+参见：<link linkend="help-cmd-news-daily">news.daily 命令参考</link>。
+</para>
+</listitem>
+</orderedlist>
+</sect1>
+
+<sect1 id="inside-inn"><title>深入 INN</title>
+<sect2><title>新闻组体系结构</title>
+<para>
+INN帮助文档中经常提到 feeder（喂食者） 和 reader（读者），也有人将其翻译为上游和下游。但是根据新闻组的架构，往往难以分清这两个角色。
+</para>
+<para>
+对于集中控制（单一服务器）的新闻组，结构非常简单，只需要一台机器控制外部来的喂信（incoming feed）、向外部喂信（outgoing feed），建立和用户的连接，提供文章发布（posting）和阅读（reading）。缺点是存在单点故障。
+</para>
+<para>
+分布式结构有使用共享池，文章复制等结构。参见：<ulink url="http://web.inter.nl.net/users/Elena.Samsonova/unix/INN/v2.3/architectures.html">《INN Architecture Guide》</ulink>。
+</para>
+
+<para>
+当INN被设定为批处理方式进行 newsfeed的情况下， News的工作流程为：
+</para>
+<para>
+News 使用者是透过News Reader软体来读取(Read)
+或发送 (Post) , 这类软体可以称之为News界面软体或者News读取软体。
+当使用者发送出一封讨论信时, News Server 立刻接手处理。首先Server
+会把该封讨论信放在自己的News Spool (/var/spool/news) 之下, 同时
+在外送预备区 (通常是/var/spool/news/out.going/site 或 /var/spool
+/news/out.going/site/togo) 留下一份记录。 这里, News Server对
+News Reader的服务是即时的, 也就是说, 以上这些流程是一瞬间完成,
+而且是连贯的。
+</para>
+<para>
+    接下来就由News Transport软体接手, 不过, News Server到News
+Transport之间就不一定是即时进行, 正常的话, 负责执行传输的软体
+是由 cron 定时启动, 之後依照/var/spool/news/out.going/site这份
+记录, 把News外送到下游的News Server。 照内定状态, INN 与 C-News
+的传输工作都必须透过 cron 来带动, 这是典型的批次处理模式。
+</para>
+<para>
+    整个Usenet的架构, 就是这样一个News Server 把讨论信传给另一
+部News Server, 如此由点而面, 构成一个资讯传输网。 再次提醒读者,
+Usenet 中的 诸多News Server彼此之间的差异可能非常大, 诸多常见的
+传送方法包括卫星传送、 NNTP over TCP/IP传送、 UUCP dialup、
+UUCP over TCP/IP、 E-mail (用任何可能的Mail Transport Agent)等
+等, 一部Server Server只要使用何其上下游News Server 相同的传输
+方法即可, 而无须顾虑外面世界究竟如何。
+</para>
+<para>
+    另外还有一点与News Transport相关的观念, 对NNTP传输方式来说,
+News 的喂送, 通常是上游的News Server「主动」将News喂送到下游的
+News Server。 举个例子来说, 我们所需要的Newsgroups, 是我们的上
+游News依照我们所要求的 (也就是我们指定订阅的) 讨论区newsgroups,
+不多不少的传送过来, 我们只需要「被动」的接受即可, 换个角度, 对
+於我们这一端产生的东西, 也是我们主动传给我们的上游News Server。
+这个说明适用於大部分的情况, 至於其例外, 我会在後面专门来介绍News
+传输的篇幅中, 更详细的介绍。
+</para>
+
+</sect2>
+
+
+<sect2><title>新闻组文章结构</title>
+<para>
+一个典型的新闻文章结构：头部信息、一个空行、正文部分。头部信息的每一行又是由关键字、冒号、空格和内容构成。
+</para>
+<para>
+头信息中必须包含的有："From", "Date", "Newsgroups", "Subject", "Message-ID", 和 "Path"。可选的关键字有："Followup-To", "Expires", "Reply-To", "Sender", "References", "Control", "Distribution", "Keywords", "Summary", "Approved", "Lines", "Xref", 和 "Organization"。
+</para>
+<screen>
+From: jerry@eagle.ATT.COM (Jerry Schwarz)                     <co id="co.ah.from"/>
+Path: cbosgd!mhuxj!mhuxt!eagle!jerry                          <co id="co.ah.path"/>
+Newsgroups: news.announce                                     <co id="co.ah.newsgroup"/>
+Distribution: nj,ny                                           <co id="co.ah.dist"/>
+Subject: Usenet Etiquette -- Please Read
+Message-ID: &lt;642@eagle.ATT.COM&gt;                               <co id="co.ah.mid"/>
+Date: Fri, 19 Nov 82 16:14:55 GMT
+Followup-To: news.misc
+Expires: Sat, 1 Jan 83 00:00:00 -0500
+Organization: AT&amp;T Bell Laboratories, Murray Hill
+                                                              <co id="co.ah.blank"/>
+The body of the message comes here, after a blank line.
+</screen>
+<calloutlist>
+<callout arearefs="co.ah.from">
+<para>
+发件人的邮件地址
+</para>
+</callout>
+<callout arearefs="co.ah.path">
+<para>
+文章每经过一个新闻网关，就会在最左边加上主机名，主机名之间用感叹号分隔。PATH 除了可以看出文章的转发路由外，还有一个重要功能——减少冗余。即根据PATH中的主机名，判断是否需要接收以及向下游喂信。
+</para>
+</callout>
+<callout arearefs="co.ah.newsgroup">
+<para>
+新闻组名称。可以为用逗号分隔的多个新闻组名。
+</para>
+</callout>
+<callout arearefs="co.ah.dist">
+<para>
+传播区域，该部分为可选信息。配合头信息的新闻组（Newsgroups）设置，更有效设置新闻的转播范围。并不常用。
+</para>
+</callout>
+<callout arearefs="co.ah.mid">
+<para>
+格式为尖括号扩起来的字符串。字符串不能包含空格、尖括号。为符合RFC-822，字符串格式为：&lt;unique@full_domain_name&gt;。
+</para>
+<para>
+Message-ID 的一个重要作用就是防止文章的重复粘贴：新来的文章和 history 对比，如果已有，则丢弃。当然还可以利用文章中 PATH 中的信息有效防止新闻转递的冗余。
+</para>
+</callout>
+<callout arearefs="co.ah.blank">
+<para>
+空行
+</para>
+</callout>
+</calloutlist>
+
+</sect2>
+
+
+<sect2 id="news-conf-active"><title>active 文件格式</title>
+<para>
+INN (innd) 决定收哪些 newsgroups 主要由 active 来决定.
+</para>
+<para>
+active档案格式为 name himark lomark flags, 我们用下例来说明。
+</para>
+<screen>
+<![CDATA[
+tw.bbs.comp.network 0000000000 0000000001 y
+tw.bbs.netnews 0000000000 0000000001 y
+tw.bbs.announce 0000000000 0000000001 m
+]]>
+</screen>
+<para>
+active 配置文件有四个域, 各域间以一个空格为间隔, 注意, 最后的域(也就是flags)之后没有空格。 最后的flags域, 最常见者为y 与 m，如下：
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+y
+</para>
+<para>
+允许本地投递
+</para>
+</listitem>
+<listitem>
+<para>
+m
+</para>
+<para>
+受控新闻组。受控新闻组设有专门管制人来看管, 读者若post到这的讨论区, 该post通常会自动被转到该讨论区管制人(Moderator)的E-mail信箱中，该管制人若认可您post的内容, 他(或她) 会帮你post到该newsgroup。
+</para>
+</listitem>
+<listitem>
+<para>
+n
+</para>
+<para>
+不允许本地投递，但允许远程投递。
+</para>
+</listitem>
+<listitem>
+<para>
+x
+</para>
+<para>
+关闭的新闻组。
+</para>
+</listitem>
+<listitem>
+<para>
+j
+</para>
+<para>
+文章不投递到组中，如果没有交替投递到其它组，直接投递到 junk 组。注意在定义 newsfeeds 时，如果不排除 junk 组，投递到 j 标记的新闻组也会进行喂信。
+</para>
+</listitem>
+<listitem>
+<para>
+=foo.bar
+</para>
+<para>
+重定义新闻组
+</para>
+</listitem>
+</itemizedlist>
+
+<para>
+检验 active 文件正确性的方法：
+</para>
+<screen>
+$ inncheck
+$ scanspool
+</screen>
+
+</sect2>
+
+<sect2 id="news-conf-history"><title>history 文件维护</title>
+
+<itemizedlist>
+<listitem>
+<para>
+history 的功用:
+</para>
+<orderedlist>
+<listitem>
+<para>
+do expire
+</para>
+</listitem>
+<listitem>
+<para>
+check duplicate message ID (收 article 时)
+</para>
+</listitem>
+<listitem>
+<para>
+find article to be cancelled
+</para>
+</listitem>
+</orderedlist>
+</listitem>
+
+<listitem>
+<para>
+因此 history 不小心误杀, entry 有缺, 或毁损, 通常非必要不用重新 rebuild. 因为其影响顶多涉及:
+</para>
+<orderedlist>
+<listitem>
+<para>
+article 无法 expire 掉 (有不用停 server 的方法, 已 post 在前)
+</para>
+</listitem>
+<listitem>
+<para>
+重复收到相同 article (不会太多)
+</para>
+</listitem>
+<listitem>
+<para>
+无法 cancel (影响不大)
+</para>
+</listitem>
+</orderedlist>
+</listitem>
+
+<listitem id="help-cmd-makehistory">
+<para>
+命令 <command>makehistory</command> 用来维护 history 和overview 数据库。
+</para>
+<itemizedlist>
+<listitem>
+<para>
+-O
+</para>
+<para>
+生成新的 overview 数据库。如果使用了buffindexed方式的数据库，在调用 makehistory -O 重新生成 overview 前，先清除现有的 overview 数据。注意只有需要提供客户端服务的新闻组服务器才有必要建立 overview 数据库，对于只提供新闻中转的，无需建立和维护 overview 数据库。
+</para>
+</listitem>
+<listitem>
+<para>
+-F
+</para>
+<para>
+启用另外的进程写 overview 数据库。优点是效率高，但是资源要求高。只有同时使用参数 -O 才有意义。对于buffindexed方式，调用overchan处理overview数据库。
+</para>
+</listitem>
+<listitem>
+<para>
+-I
+</para>
+<para>
+对于文章ID低于 active 文件中的最低ID值的，不建立 overview 数据库。这适合于磁盘中存在旧的文章，但并不想让用户看到的情况。
+</para>
+</listitem>
+<listitem>
+<para>
+-x
+</para>
+<para>
+不改动 history 文件。适合于只想重建 overview 数据库（使用 -O 参数），但是不影响现有 history 文件。
+</para>
+</listitem>
+<listitem>
+<para>
+-b
+</para>
+<para>
+删除没有 Message-ID 的文章。
+</para>
+</listitem>
+<listitem>
+<para>
+-f &lt;filename&gt;
+</para>
+<para>
+将 history 文件写入指定文件
+</para>
+</listitem>
+</itemizedlist>
+
+</listitem>
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="news-conf-overview"><title>overview 维护</title>
+<sect3><title>overview的概念</title>
+<para>
+"News Overview" 顾名思义, overview 就是先大略看看 article 的相关资讯。
+</para>
+<para>
+举例而言, 假设一个 user 用 Netscape 的 News reader, 连上某个 News server 後,
+  ( 当然用其它的 news reader, 情况也是类似的 )
+</para>
+
+<orderedlist>
+<listitem>
+<para>
+会出现一些 newsgroups ( subscribed ), 试窗里除了 newsgroups 名称之外, 还有一些数字, 表示有多少篇 articles 他还没有读过, ..
+</para>
+</listitem>
+<listitem>
+<para>
+选定某个 newsgroup 後, 接下来视窗里, 会出现许多不同主题的 articles 列表, 可能照时间 ( Date), 照标题 ( Subject ), 照作者姓名 ( From ) 排列,...  除了标题外, 可能还有作者( From address ) 列表, 另外还有一些数字, 表示某一主题的 articles 共有几篇, ...
+</para>
+</listitem>
+<listitem>
+<para>
+当 user 找到某个有兴趣的标题後, 按 &lt;Enter&gt;, 你的 News reader 才到 News server 那里, 要求将该篇 article 传过来.
+</para>
+</listitem>
+</orderedlist>
+<para>
+  这些 Subjects, From, Dates 等资讯, 基本上是藏在 News articles 里面.
+  一个 News reader 要得到这些, 就只好向 News server 要.
+</para>
+<para>
+  以往, News articles 数目不多时, 某一个 client 向 news server 要这
+  些 index 资料时, news server 自己到 spool directory 去 scan, open
+  news articles, 将这些东西找出来, 丢给 client.
+</para>
+<para>
+  现在 newsgroups/news articles 数量多了, 还是用这样的方法, 系统自然
+  就很可能忙不过来. 所以, 现在改成建 NOV ( News OverView database),
+  从 News server 收到某一篇文章的同时, 就把这些 threading 需要的东西,
+  挑出来, 放到 NOV database 中. ( 通常是一个 newsgroups, 一个档 )
+</para>
+<para>
+  这样一来, 某一个 client 来要某一个 newsgroups 的 indexing 资料,
+  news server 就把对应的 ".overview" file 打开, 将资料读出来,
+  送回给 news client. 不需要像从前一样, 到该 newsgroups 对应的
+  目录中, 将所有的 articles 都 open 一次.
+</para>
+<para>
+  而且, 因为是 articles 一进到系统时, ".overview" file 就被 updated,
+  这样对 system loading 的 impact 比较小, 不像有些系统 , 必须另外
+  透过 cron, 定时再去 scan spool, 再造出 indexing 资料, ...
+</para>
+<para>
+还有, 需要强调的是, NOV (".overview") database 最好和一般的 articles 分开, 分别不同的 directory。
+</para>
+<para>
+在配置文件 inn.conf 中的 ovmethod 指定 overview 的方式。
+</para>
+<para>
+目前 overview 有三种：tradindexed，buffindexed，以及 ovdb。tradindexed 是读取快速，但是由于对每个新的 article 都要更新两个文件因此写入非常慢。buffindexed 使用了一的大缓冲区来存储所有的 overvew，因此在大量喂送（large feed）的时候非常胜任，但是对于使用者而言会觉得有点慢。ovdb 将 overview 的数据除存储在 Berkeley DB version 3 的 数据库中，不但快速而且非常健壮（robust），只是要多花点空间来存储而已。要注意的是没有像其他两个 Mechanism 经过了常时间的考验，因此是有风险存在的。
+</para>
+
+</sect3>
+
+<sect3><title>维护</title>
+<para>
+文章过期，NOV 会自动更新。但是如果文章被 cancel，NOV不会被更新。这样当文章过期后，文章在 spool 中不存在，而 NOV 中仍存在。这就需要用如下命令定期清理（可以把该命令加入到 crontab 中）：
+</para>
+<screen>
+$ expireover -s
+</screen>
+<para>
+重建 overview 数据库，使用 makehistory 命令（参见：<link linkend="help-cmd-makehistory">makehistory 命令参考</link>）：
+</para>
+<screen>
+$ <command>makehistory -O -F -b -I -x</command>
+</screen>
+
+</sect3>
+
+</sect2>
+
+<sect2 id="help-cmd-news-daily"><title>命令参考: news.daily</title>
+<para>
+news.daily 应该以 news 管理员身份运行，而不是以 root 用户运行。它能完成：状态报告，删除过期文章，日志文件处理，处理active文件等功能。
+</para>
+<para>
+通常在 crontab 中建立 news.daily 的调用。如果要在一天内多次运行，应该加上 norotate 参数，避免日志文件过快的回滚。
+</para>
+<para>
+命令格式：<command>news.daily 参数... </command>
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+delayrm
+</para>
+<para>
+暗含 expireover 的调用。以 -z 参数运行 expire 和 expireover。要删除的文件ID先写入一个文件，再调用 expirerm 删除文件。
+</para>
+</listitem>
+<listitem>
+<para>
+notdaily
+</para>
+<para>
+将不进行需要一天一次的诸如日志处理、回滚的工作。
+</para>
+</listitem>
+<listitem>
+<para>
+noexpire
+</para>
+<para>
+确省将删除过期文章。使用该参数则不进行文章过期工作。
+</para>
+</listitem>
+<listitem>
+<para>
+noexpireover
+</para>
+<para>
+确省将过期文章从overview数据库中删除。对于只负责上下游喂信，不提供客户端连接的，无需设置overview数据库，则调用该参数则不进行更新overview的工作。
+</para>
+</listitem>
+<listitem>
+<para>
+noexplog
+</para>
+<para>
+不输出过期日志
+</para>
+</listitem>
+<listitem>
+<para>
+nologs
+</para>
+<para>
+禁止日志处理
+</para>
+</listitem>
+<listitem>
+<para>
+norotate
+</para>
+<para>
+不进行日志回滚
+</para>
+</listitem>
+<listitem>
+<para>
+norenumber
+</para>
+<para>
+禁用 ctlinnd 为 active 文件重建 low-water mark。
+</para>
+</listitem>
+<listitem>
+<para>
+lowmark
+</para>
+<para>
+如果以该参数调用，则通过 ctlinnd lowmark 来重建active的数字。以减少 ctlinnd 操作的时间。如果调用 lowmark 参数，则 norenumber 参数默认。
+</para>
+</listitem>
+</itemizedlist>
+</sect2>
+
+<sect2><title>inn.conf</title>
+<para>
+inn.conf - Configuration data for InterNetNews programs
+</para>
+<para>
+修改文件<filename>etc/inn.conf</filename>，修改之处已经加亮显示：
+</para>
+<screen>
+##  $Id: newsservice.xml,v 1.6 2004/02/03 06:34:37 jiangxin Exp $
+##
+##  inn.conf -- INN configuration data
+##
+##  Format:
+##      &lt;parameter&gt;:&lt;whitespace&gt;&lt;value&gt;
+##
+##  Blank values are allowed for certain parameters.
+##
+##  See the inn.conf(5) man page for a full description of each of these
+##  options.  This sample file is divided into two sections; first, there
+##  are the parameters that must be set (or should be set in nearly all
+##  cases), and then all parameters are given with their defaults for
+##  reference in the same order and with the same organization as the
+##  inn.conf(5) documentation.
+
+# The following parameters are most likely to need setting, although the
+# defaults generated by configure may be reasonable.
+
+mta:                    /usr/sbin/sendmail -oi -oem %s
+<emphasis>organization:           Unknown</emphasis>   <co id="co.innconf.org"/>
+<emphasis>ovmethod:               tradindexed</emphasis>
+<emphasis>pathhost:               news</emphasis>
+pathnews:               /usr/local/news
+
+# General Settings
+
+<emphasis>domain:			worldhello.net</emphasis>
+innflags:
+mailcmd:                /usr/local/news/bin/innmail
+server:
+
+# Feed Configuration
+
+<emphasis>artcutoff:              60</emphasis>
+bindaddress:
+<emphasis>hiscachesize:           256</emphasis>   <co id="co.innconf.hiscache"/>
+ignorenewsgroups:       false
+immediatecancel:        false
+linecountfuzz:          0
+<emphasis>maxartsize:             500000</emphasis>
+maxconnections:         50
+pathalias:
+pgpverify:              false
+port:                   119
+refusecybercancels:     false
+remembertrash:          true
+sourceaddress:
+usecontrolchan:         false
+verifycancels:          false
+wanttrash:              false
+wipcheck:               5
+wipexpire:              10
+
+# Article Storage
+
+cnfscheckfudgesize:     0
+<emphasis>enableoverview:         true</emphasis>
+groupbaseexpiry:        true
+mergetogroups:          false
+overcachesize:          15
+ovgrouppat:
+storeonxref:            false
+useoverchan:            false
+wireformat:             false
+xrefslave:              false
+
+# Reading
+
+allownewnews:           true
+articlemmap:            false
+clienttimeout:          600
+nnrpdcheckart:          true
+nnrpperlauth:           false
+nnrppythonauth:         false
+noreader:               false
+readerswhenstopped:     false
+readertrack:            false
+
+# Reading -- Keyword Support
+#
+# Enabling this without stopping innd and deleting the existing overview
+# database and adding will probably confuse a lot of things.  You must
+# have compiled this support in too.
+
+keywords:               false
+keyartlimit:            100000
+keylimit:               512
+keymaxwords:            250
+
+# Posting
+
+addnntppostingdate:     true
+addnntppostinghost:     true
+checkincludedtext:      false
+complaints:
+fromhost:
+<emphasis>localmaxartsize:        500000</emphasis>
+moderatormailer:
+nnrpdauthsender:        false
+<emphasis>nnrpdposthost:                </emphasis>
+nnrpdpostport:          119
+<emphasis>spoolfirst:             false</emphasis>
+strippostcc:            false
+
+# Posting -- Exponential Backoff
+
+backoffauth:            false
+backoffdb:
+backoffk:               1
+backoffpostfast:        0
+backoffpostslow:        1
+backofftrigger:         10000
+
+# Monitoring
+
+doinnwatch:             true
+innwatchbatchspace:     800
+innwatchlibspace:       25000
+innwatchloload:         1000
+innwatchhiload:         2000
+innwatchpauseload:      1500
+innwatchsleeptime:      600
+innwatchspoolnodes:     200
+innwatchspoolspace:     8000
+
+# Logging
+
+docnfsstat:             false
+logartsize:             true
+logcancelcomm:          false
+logcycles:              3
+logipaddr:              true
+logsitename:            true
+nnrpdoverstats:         false
+nntpactsync:            200
+nntplinklog:            false
+status:                 0
+timer:                  0
+
+# System Tuning
+
+badiocount:             5
+blockbackoff:           120
+chaninacttime:          600
+chanretrytime:          300
+icdsynccount:           10
+maxforks:               10
+nicekids:               4
+nicenewnews:            0
+nicennrpd:              0
+pauseretrytime:         300
+peertimeout:            3600
+rlimitnofile:           -1
+
+# Paths
+
+patharchive:            /usr/local/news/spool/archive
+patharticles:           /usr/local/news/spool/articles
+pathbin:                /usr/local/news/bin
+pathcontrol:            /usr/local/news/bin/control
+pathdb:                 /usr/local/news/db
+pathetc:                /usr/local/news/etc
+pathfilter:             /usr/local/news/bin/filter
+pathhttp:               /usr/local/news/log
+pathincoming:           /usr/local/news/spool/incoming
+pathlog:                /usr/local/news/log
+pathoutgoing:           /usr/local/news/spool/outgoing
+pathoverview:           /usr/local/news/spool/overview
+pathrun:                /usr/local/news/run
+pathspool:              /usr/local/news/spool
+pathtmp:                /usr/local/news/tmp
+</screen>
+<calloutlist>
+<callout arearefs="co.innconf.org">
+<para>
+Set this to the name of your organization as you want it to appear in the Organization: header of all articles posted locally and not already containing that header. This will be overridden by the value of the ORGANIZATION environment variable (if it exists). If neither this parameter nor the environment variable or set, no Organization: header will be added to posts which lack one.
+</para>
+</callout>
+<callout arearefs="co.innconf.hiscache">
+<para>
+The amount of memory (in kilobytes) to allocate for a cache of recently used history file entries. Setting this to 0 disables history caching. History caching can greatly increase the number of articles per second that your server is capable of processing. A value of 256 is a good default choice. 
+</para>
+</callout>
+</calloutlist>
+
+</sect2>
+
+<sect2 id="innd-acl"><title>权限控制</title>
+<para>
+配置文件：<filename>/etc/readers.conf</filename> ，被程序 nnrpd 用来进行权限控制。控制谁可以连接新闻服务器以及用户的访问权限。
+</para>
+<para>
+配置文件中有两种不同的配置组组成：auth 和 access。auth 组用来判定用户身份——是谁？ access 组用来判定用户的权限——能干什么？
+</para>
+<para>
+如何将 auth 和 access 配置组联系在一起呢？首先遍历所有的 auth 配置组，最后一个匹配的 auth 配置组负责分配一个标识，通常（参见下面的例子）通过 auth 配置组中的 default 和 default-domain 组合成形如 default@default-domain 的 ID 标识。这个标识去和 access 配置组的 users 去匹配。匹配通过，则分配 access 配置组中相应的权限。
+</para>
+<para>
+对如下的 auth 配置组：
+</para>
+<screen>
+auth &lt;name&gt; {
+    hosts: &lt;host-wildmat&gt;
+    auth: &lt;auth-program&gt;
+    res: &lt;res-program&gt;
+    default: &lt;defuser&gt;
+    default-domain: &lt;defdomain&gt;
+    # ...possibly other settings
+}
+</screen>
+<para>
+如果定义了 "res: &lt;res-program&gt;"，则用程序 res-program 检查用户的连接信息，如果返回一个 用户名（不带 @ 字符），则 auth 配置组返回的标识为 用户名@&lt;defdomain&gt;；如果带 @ 字符，则直接返回 res-program 的返回值；如果 res-program 返回 false 或者根本没有定义 res 参数，则返回 &lt;defuser&gt;@&lt;defdomain&gt;
+</para>
+<para>
+如果用户连接之后，发出认证的命令（AUTHINFO USER/PASS commands），则用户名和口令传递给程序 &lt;auth-program&gt;，如果定义了 auth 参数的话。 &lt;auth-program&gt;认证通过，则返回新的用户标识，即用户提供的用户名，而不再使用 &lt;defuser&gt; 名称。
+</para>
+<para>
+如果有多个 auth 配置组，则最后一个匹配用户连接状态或者认证状态的配置组才是最终起作用的。
+</para>
+<para>
+然后进行第二个步骤，用获得的唯一用户标识去和各个 access 配置组匹配。一个 access 配置组如下：
+</para>
+<screen>
+access &lt;name&gt; {
+    users: &lt;identity-wildmat&gt;
+    newsgroups: &lt;group-wildmat&gt;
+    # ...possibly other settings
+}
+</screen>
+<para>
+同样 access 后面的 &lt;name&gt; 除了可视之外，没有其它用途。起作用的是 users 参数，它的值用来匹配 auth 配置组返回的用户标识，如果匹配则具有该 access 配置组赋予的相应权限。同样对于多个 access 配置组，类似的最后一个匹配的 access 配置组起作用。
+</para>
+<para>
+在权限设置复杂的情况下，还可以通过 auth 配置组中的 key 字段，限制匹配范围。即只去检查具有相通 key 字段的 access 配置组，如果 auth 配置组返回的用户标识和对应的 access 配置组的 key 匹配，则分配相应 access 组定义的权限。
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+基于 IP 地址认证示例：
+</para>
+<screen>
+auth rd {  <co id="co.auth.ipcomm"/>
+        hosts: 10.0.0.0/24
+        default: intranet
+        default-domain: worldhello
+}
+
+access rd {
+        users: intranet@worldhello
+        newsgroups: "*,!control.*,!junk,!control"  <co id="co.auth.quotion"/>
+        localtime: yes  <co id="co.auth.boolen"/>
+        access: "Read Post"
+}
+
+auth "localhost" {  <co id="co.auth.ipadm"/>
+    hosts: "localhost, 127.0.0.1, stdin"
+    default: "&lt;localhost&gt;"
+}
+
+
+access "localhost" {
+    users: "&lt;localhost&gt;"
+    newsgroups: "*"
+    access: RPA
+}
+
+access fail {
+        users: "&lt;FAIL&gt;@&lt;UNKNOWN&gt;"
+        newsgroups: !*
+}
+</screen>
+<calloutlist>
+<callout arearefs="co.auth.ipcomm">
+<para>
+通过 IP 地址对用户进行身份认证。当然也可以将IP地址替换为域名，如：“*.foo.bar”。
+</para>
+<para>
+auth 后面紧跟的名称 rd 除了标识之外，不起任何作用。和 access rd 中的 rd 无关。
+</para>
+</callout>
+<callout arearefs="co.auth.quotion">
+<para>
+冒号分隔的  Parameter/value 对中的 Value 部分如果包含空格，一定要用引号引起来；目前也没有方法使 value 部分分行，所以 value 的长度受到一行的容量的限制，通常是 8,180 字符；
+</para>
+</callout>
+<callout arearefs="co.auth.boolen">
+<para>
+"yes" 是布尔值，同样的布尔值还有 "true/false", "yes/no", 和 "on/off"；
+</para>
+</callout>
+<callout arearefs="co.auth.ipadm">
+<para>
+本地用户，具有更高的权限
+</para>
+</callout>
+</calloutlist>
+</listitem>
+
+<listitem id="nntp.auth">
+<para>
+基于口令的认证：
+</para>
+<para>
+口令验证方式需要在 auth 配置组中提供 auth 字段。auth 字段的值是用来验证口令的应用程序，该程序必须位于路径 <filename>PATH_NEWS/bin/auth/passwd/</filename> 下。
+</para>
+<screen>
+auth "passwords" {
+        hosts:  "*"
+        key:    "pwd"
+        auth: "ckpasswd -d /usr/local/news/db/newsusers" <co id="co.nntp.auth.d"/>
+        auth: "ckpasswd -s" <co id="co.nntp.auth.s"/>
+}
+access "passwords" {
+        key:    "pwd"
+        newsgroups: "*,!local.newstest,!control*,!junk"
+        access: "Read Post"
+}
+
+access "admin" {
+        users:  "johnson"
+        key:    "pwd"
+        newsgroups: "*"
+        access: "Read Post"
+}
+</screen>
+<calloutlist>
+<callout arearefs="co.nntp.auth.d">
+<para>
+使用用户数据库 /usr/local/news/db/newsusers ，进行口令验证
+</para>
+</callout>
+<callout arearefs="co.nntp.auth.s">
+<para>
+使用系统用户数据库进行口令验证。可能需要设置 ckpasswd 的 setuid 权限。
+</para>
+</callout>
+</calloutlist>
+<para>
+定义了两组用户，可以从任何地址访问（hosts:  "*"）。外部程序check_password ，用来和客户端通讯，完成口令认证。
+</para>
+<para>
+如果用户通过了身份验证，并且用户名为：johnson，则通过名为“admin”的控制域，为用户赋予更大的权限（能够访问包括 control.*, junk 在内的所有新闻组）。
+</para>
+<para>
+如果用户通过了身份认证，但是是其它用户名，则通过名为“passwords”的控制域，为用户赋予权限。
+</para>
+<para>
+测试口令验证，参见：<link linkend="nntp-test">测试新闻服务器</link>。
+</para>
+</listitem>
+</itemizedlist>
+<note>
+<para>
+参见 MAN 手册： readers.conf(5), ckpasswd(1)
+</para>
+</note>
+</sect2>
+
+<sect2><title>受控新闻组</title>
+<para>
+受控新闻组（Moderated Groups）就如同受控邮件列表一样，不允许用户直接发表文章，而是转发到管理员，由管理员审核后，再次发布到新闻组中，从而实现受控新闻。
+</para>
+<para>
+受控新闻组，约定俗成的名字为：group_name.mod ，但这不是强制的。
+</para>
+<para>
+管理员的邮件地址列在 moderators 文件中。
+</para>
+<para>
+受控新闻参见：<ulink url="http://www.landfield.com/usenet/moderators/handbook/">NetNews Moderator's Handbook</ulink>。
+</para>
+</sect2>
+
+<sect2><title>撤销和管理文章</title>
+<para>
+撤销和管理文章，实际上是再次发表带有控制信息的文章，服务器根据其包含的控制信息进行相应动作。
+</para>
+<para>
+显而易见的问题是，如何确定控制信息不是伪造的？
+</para>
+<para>
+最广泛使用的方法是：将发信人的邮件地址列在 control.ctl 文件中，定义哪些用户是可以信任的，哪些用户不能信任（忽略其控制信息）。
+</para>
+<para>
+control.ctl 示例：
+</para>
+<screen>
+## -------------------------------------------------------------------------
+##      DEFAULT
+## -------------------------------------------------------------------------
+
+# Default to dropping control messages that aren't recognized to allow
+# people to experiment without inadvertently mailbombing news admins.
+all:*:*:drop
+
+## -------------------------------------------------------------------------
+##      CHECKGROUPS MESSAGES
+## -------------------------------------------------------------------------
+# Default to mailing all checkgroups messages to the administrator.
+checkgroups:*:*:mail
+
+## -------------------------------------------------------------------------
+##      NEWGROUP/RMGROUP MESSAGES
+## -------------------------------------------------------------------------
+
+## Default (for any group)
+newgroup:*:*:mail
+rmgroup:*:*:mail
+
+</screen>
+
+<para>
+参见：<ulink url="http://web.inter.nl.net/users/Elena.Samsonova/unix/INN/v2.3/implementation.html#News_Groups_Maintenance">News Groups Maintenance</ulink>
+</para>
+
+</sect2>
+
+<sect2><title>喂信（News Feeds）设置</title>
+<para>
+配置文件 <filename>incoming.conf</filename>，用来控制来自外部的喂信（incoming feed）；配置文件 <filename>newsfeeds</filename>，用来控制本服务器向外部的喂信（outgoing feed）。
+</para>
+<sect3><title>被动接收上游喂信</title>
+<para>
+配置接收外部新闻服务器喂信非常简单，只需要修改配置文件<filename>incoming.conf</filename>即可。注意其中的 peer ME 的设置，不正确的设置，导致不能收到文章。
+</para>
+<screen>
+<![CDATA[
+streaming:              true   # streaming allowed by default
+max-connections:        8      # per feed
+
+peer ME {
+  hostname:         "localhost, 127.0.0.1"
+}
+]]>
+</screen>
+<para>
+另外一个要注意的是，配置文件 <filename>newsfeeds</filename>中的 ME 项。其中的 distributions 域用于判断允许接收哪些文章，错误设置也可导致无法收到文章。
+</para>
+<screen>
+<![CDATA[
+ME:!*/!local,!collabra-internal::
+]]>
+</screen>
+
+<para>
+下面的配置，将限制主机 example.com，不能向本地主机发送 local.* 的文章。
+</para>
+<screen>
+<![CDATA[
+    peer remote.example.com {
+        patterns: "*, @local.*"
+        hostname: "remote.example.com, news.example.com"
+    }
+]]>
+</screen>
+<para>
+只设置了本地服务器的 incoming.conf，还不行，还需要通知上游站点，主动向本服务器喂信。
+</para>
+
+</sect3>
+
+<sect3><title>主动去上游取信</title>
+<para>
+如果无法通知上游向本地喂信，想要从其它服务器获取新闻消息，可以使用 suck 从上游取信。suck 可以认为是一个 news 客户端，负责从新闻组服务器获取新闻，并可以以各种格式存储，交给 innfeed，innxmit 等inn软件包的程序进一步处理（如投递到本地）。
+</para>
+<para>
+suck 的下载网址：<ulink url="http://www.sucknews.org/">http://www.sucknews.org/</ulink>。
+</para>
+<para>
+中国的网络新闻组发展相对落后，不但和美国没法比，就是和台湾也比不了，比较一下 cn.comp.* 上的新闻数量和 comp.*, tw.* 的发贴数量就看出来了。还有一个问题是，国内的用户量比较大的新闻组，如：新帆、万千等都维护自己独立的新闻组，新闻组名称互不相同，而且不同的服务器之间更没有新闻互转。
+</para>
+<para>
+我用 suck 实现了将互不相通的新闻组的服务器的新闻收集，归类在本地统一配置的新闻组服务器中，但是没有实现将新闻向外同步，因为本地的一个组可能是外部好多的新闻组汇集而来。
+</para>
+<para>
+配置步骤
+</para>
+
+<orderedlist>
+<listitem>
+<para>
+安装 suck
+</para>
+</listitem>
+<listitem>
+<para>
+创建 suck 工作目录
+</para>
+<para>
+因为 suck 要到不同的新闻服务器取信（新闻服务器互不相通），要为每个服务器建立不同的目录。
+</para>
+<para>
+suck 工作根目录： /usr/local/news/suck，新帆新闻组的工作目录  /usr/local/news/suck/news.newsfan.net，希网网络新闻组的工作目录  /usr/local/news/suck/news.yaako.com，万千新闻组的工作目录  /usr/local/news/suck/news.webking.com.cn，...
+</para>
+<screen>
+$ mkdir -p /usr/local/news/suck/news.newsfan.net/Msgs
+$ mkdir -p /usr/local/news/suck/news.yaako.com/Msgs
+$ mkdir -p /usr/local/news/suck/news.webking.com.cn/Msgs
+</screen>
+</listitem>
+<listitem>
+<para>
+创建运行脚本 
+</para>
+<para>
+/usr/local/news/suck/suck.sh
+</para>
+<screen>
+#!/bin/sh
+
+basedir=/usr/local/news/suck/
+run=$basedir/get.news.inn
+
+for i in `ls $basedir`; do
+        if [ -d $basedir/$i ]; then
+                sh $run $i             <co id="co.suck.callname"/>
+        fi
+done
+</screen>
+
+<calloutlist>
+<callout arearefs="co.suck.callname">
+<para>
+/usr/local/news/suck 下的子母录名，作为参数传递给 get.news.inn 脚本。注意该子目录名即为服务器域名。
+</para>
+</callout>
+</calloutlist>
+<para>
+脚本：/usr/local/news/suck/get.news.inn
+</para>
+<screen>
+#!/bin/sh
+
+#BEFORE USING - check to ensure all the paths defined below are correct!!
+
+#NOTE: this script probably needs to be run by root.  Most systems will
+# not let a normal user run ctlinnd 
+
+REMOTE_HOST=$1
+LOCAL_HOST=localhost
+
+SPOOLDIR=/usr/local/news/spool		# base directory for articles to be rposted
+NEWSDIR=/usr/local/news			# base directory for news binaries 
+BASEDIR=/usr/local/news/suck/$1/	# base directory for scripts and data files
+
+CTLINND=${NEWSDIR}/bin/ctlinnd		# location of binary
+SHLOCK=${NEWSDIR}/bin/shlock		# location of binary
+
+TMPDIR=${BASEDIR}			# location for suck.* files
+MSGDIR=${BASEDIR}/Msgs			# where to put MultiFile messages when getting them
+
+SITE=$1					# name of site from newsfeeds file
+
+OUTGOING=${SPOOLDIR}/outgoing/${SITE}	# location of the list of articles to upload
+OUTGOINGNEW=${OUTGOING}.new		# file to contain the list temporarily
+OUTGOINGFAIL=${OUTGOINGNEW}.fail	# file with failed xfers
+SCRIPT=${BASEDIR}/news.filter		# my filter for rpost
+OUTFILE=/tmp/tmp$$			# used by rpost as article after it is filtered
+LOCKFILE=${BASEDIR}/getnews.lock	# lock file to prevent multiple instances of script
+NEWSGROUP=news				# which group owns the file in out.going, typically either news or uucp.
+BATCHFILE=${BASEDIR}/suckbatch.xmit
+TRANSTAB=${BASEDIR}/transtab
+
+TESTHOST=/usr/local/bin/testhost
+RPOST=/usr/local/bin/rpost
+SUCK=/usr/local/bin/suck
+INNXMIT=/usr/local/bin/innxmit
+
+# if we are already running, abort 
+
+trap 'rm -f ${LOCKFILE} ; echo "Aborting" ; exit 1' EXIT 1 2 3 15	<co id="co.suck.trap"/>
+${SHLOCK} -p $$ -f ${LOCKFILE}
+if [ $? -ne 0 ]; then
+	echo "Already running, can't run two at one time"
+	exit
+fi
+
+# is the local host up and running so we can post messages we download?
+${TESTHOST} ${LOCAL_HOST} -s
+LOCAL_RESULT=$?
+
+# is the remote host up and running so we can download messages?
+${TESTHOST} ${REMOTE_HOST} -s
+REMOTE_RESULT=$?
+
+if [ ${REMOTE_RESULT} -ne 0 ]; then
+	echo "remote server cannot be connected!"
+	exit 1
+fi
+if [ ${LOCAL_RESULT} -ne 0 ]; then
+	echo "local server cannot be connected!"
+	exit 1
+fi
+
+if [ -f "${BASEDIR}/shutdown" ]; then
+	echo "not update, due to shutdown file exist"
+	exit 0
+fi
+
+
+# now upload messages
+while [ -s $BATCHFILE ] ; do	 <co id="co.suck.resend"/>
+	echo "warning: batchfile - $BATCHFILE already exist!"
+	${INNXMIT} ${LOCAL_HOST} ${BATCHFILE}
+	sleep 10
+done
+
+# download messages
+${SUCK} ${REMOTE_HOST} -c -bi ${BATCHFILE} -dt ${TMPDIR} -dm ${MSGDIR} -dd ${BASEDIR} -HF /usr/local/news/db/history	 <co id="co.suck.suck"/>
+SUCK_STATUS=$?
+
+if [ ${SUCK_STATUS} -eq 0 ]; then
+	echo "Downloaded Articles"
+elif [ ${SUCK_STATUS} -eq 1 ]; then
+	echo "No articles to download"
+elif [ ${SUCK_STATUS} -eq 2 ]; then
+	echo "Unexpected answer from remote server to an issued command"
+elif [ ${SUCK_STATUS} -eq 4 ]; then
+	echo "Can't do NNTP authorization"
+elif [ ${SUCK_STATUS} -eq -1 ]; then
+	echo "General failure"
+fi
+
+# filter messages
+if [ -f ${TRANSTAB} ]; then	 <co id="co.suck.filter"/>
+	for x in `ls ${MSGDIR}`; do
+		x="${MSGDIR}/${x}"
+		header="`grep -m 1 "^Newsgroups:" $x | sed -e 's/^Newsgroups:[ ]*//' -e 's/,/ /g' `"
+		newheader=""
+		if [ -z "$header" ]; then
+			rm -f $x
+			continue
+		fi
+		for y in $header; do
+			value=`grep -m 1 "$y:" $TRANSTAB | awk -F : '{ print $2; }'`
+			if [ "x$value" != "x" ]; then
+				newheader="${newheader},${value}"
+			fi
+		done
+		newheader=${newheader#,}
+		if [ "x$newheader" != "x" ]; then
+			tmpfile=`mktemp /tmp/suck.XXXXXX`
+			sed -e "s/^Newsgroups:.*$/Newsgroups: $newheader/" $x &gt; $tmpfile
+			mv -f $tmpfile $x
+		else
+			rm -f $x
+		fi
+	done
+fi
+
+
+# now upload messages
+${INNXMIT} ${LOCAL_HOST} ${BATCHFILE}	 <co id="co.suck.innxmit"/>
+if [ ! -f $BATCHFILE ] ; then
+	cd $MSGDIR
+	echo "clear cache"
+	rm -f *
+fi
+
+</screen>
+<calloutlist>
+<callout arearefs="co.suck.trap">
+<para>
+脚本退出，删除文件锁
+</para>
+</callout>
+<callout arearefs="co.suck.resend">
+<para>
+检查是否有上次遗留的文章没有发送，通过 innxmit 发送到本机
+</para>
+</callout>
+<callout arearefs="co.suck.suck">
+<para>
+运行 suck 命令，将服务器  ${REMOTE_HOST} 的新文章放到临时目录 ${TMPDIR} 中，并生成供 innxmit 调用的脚本 ${BATCHFILE}。
+</para>
+</callout>
+<callout arearefs="co.suck.suck">
+<para>
+运行 suck 命令，将服务器  ${REMOTE_HOST} 的新文章放到临时目录 ${TMPDIR} 中，并生成供 innxmit 调用的脚本 ${BATCHFILE}。
+</para>
+</callout>
+<callout arearefs="co.suck.filter">
+<para>
+如果存在文件 transtab，则对临时目录中的文章进行修改，替换 header 中的 Newsgroups ，将远程新闻组名替换为本地统一的新闻组名称。
+</para>
+</callout>
+<callout arearefs="co.suck.innxmit">
+<para>
+运行 innxmit ，将刚刚抓来并已经经过 filter 过滤的新闻发送到本地。
+</para>
+</callout>
+</calloutlist>
+</listitem>
+<listitem>
+<para>
+在每个新闻组服务器的工作目录下，创建配置文件 sucknewsrc
+</para>
+<para>
+sucknewsrc 示例: 示例：/usr/local/news/suck/news.newsfan.net/sucknewsrc
+</para>
+<screen>
+计算机.软件.编程 -100		<co id="co.suck.rc1"/>
+计算机.软件.编程.API -50
+计算机.软件.编程.C语言 1		<co id="co.suck.rc2"/>
+计算机.软件.编程.C语言.BCB 2584
+计算机.软件.编程.C语言.C++ 10494
+计算机.软件.编程.Perl 1550
+计算机.软件.编程.Vc 24864
+计算机.软件.病毒 10292
+计算机.软件.操作系统 5110
+计算机.软件.操作系统.FreeBSD 709
+计算机.软件.操作系统.Linux 25333
+计算机.软件.操作系统.Linux.常见问题 554
+计算机.软件.操作系统.MACOS 473
+计算机.软件.操作系统.Unix 1790
+计算机.软件.软件工程 1712
+计算机.网络.网络安全 11222
+计算机.网络.协议.TCPIP 3783
+精华信区.计算机 61
+精华信区.计算机.软件 43
+精华信区.计算机.软件.办公软件 2
+精华信区.计算机.软件.编程 27
+精华信区.计算机.软件.编程.ASP 38
+精华信区.计算机.软件.编程.C语言 14
+精华信区.计算机.软件.操作系统 50
+精华信区.计算机.软件.数据库 2
+精华信区.计算机.软件.图形图像 3
+精华信区.计算机.软件.主页制作 8
+精华信区.计算机.网络 64
+精华信区.计算机.网络.网络安全 61
+精华信区.计算机.网络.硬件 8
+精华信区.计算机.硬件 150
+精华信区.计算机.硬件.故障维修 13
+精华信区.精华推荐 292
+精华信区.休闲娱乐.讽刺与幽默 116
+</screen>
+<calloutlist>
+<callout arearefs="co.suck.rc1">
+<para>
+-100 含义是取回最新的100篇文章。
+</para>
+</callout>
+<callout arearefs="co.suck.rc2">
+<para>
+1 的含义是从第一篇文章开始取回全部的文章。
+</para>
+</callout>
+</calloutlist>
+<para>
+该文件一次创建，以后 suck 自动维护该文件
+</para>
+</listitem>
+<listitem>
+<para>
+在每个新闻组服务器的工作目录下，创建配置文件 transtab 
+</para>
+<para>
+transtab 示例：/usr/local/news/suck/news.newsfan.net/transtab
+</para>
+<screen>
+计算机.软件.编程:cn.comp.lang
+计算机.软件.编程.API:cn.comp.lang
+计算机.软件.编程.C语言:cn.comp.lang.c
+计算机.软件.编程.C语言.BCB:cn.comp.lang.c
+计算机.软件.编程.C语言.C++:cn.comp.lang.c
+计算机.软件.编程.Perl:cn.comp.lang.perl
+计算机.软件.编程.Vc:cn.comp.lang.vc
+计算机.软件.病毒:cn.comp.security.virus
+计算机.软件.操作系统:cn.comp.os
+计算机.软件.操作系统.FreeBSD:cn.comp.os.freebsd
+计算机.软件.操作系统.Linux:cn.comp.os.linux
+计算机.软件.操作系统.Linux.常见问题:cn.comp.os.linux
+计算机.软件.操作系统.MACOS:cn.comp.os.macos
+计算机.软件.操作系统.Unix:cn.comp.os.unix
+计算机.软件.软件工程:cn.comp.softeng
+计算机.网络.网络安全:cn.comp.security
+计算机.网络.协议.TCPIP:cn.comp.network
+精华信区.休闲娱乐.讽刺与幽默:休闲娱乐.讽刺与幽默
+</screen>
+<para>
+用冒号分隔的新闻组名称对应表，前面是该新闻组实际名称，后面是欲替换的名称。
+</para>
+</listitem>
+<listitem>
+<para>
+在 crontab 中加入如下内容，每小时自动同步一次：
+</para>
+<screen>
+40      *       *       *       *       /bin/sh /usr/local/news/suck/suck.sh
+</screen>
+</listitem>
+
+</orderedlist>
+
+</sect3>
+
+<sect3><title>向外喂信</title>
+<para>
+由配置文件<filename>newsfeeds</filename>控制。newsfeeds档案的设定, 算是INN News Server最重要的工作, 也是困难度最高的部份。 innd 靠 newsfeeds 来决定要丢哪些 newsgroups 的 articles 给哪些 site 负责的程序 (nntplink) 或产生批处理, 让其它的程序来转送。
+</para>
+<para>
+INN newsfeeds档案至少必须定义自己（ME）以及一个喂送下游 Server。
+</para>
+<para>
+该文件由一系列 feed 项构成。每一个配置项由四个部分构成，用冒号分开。
+</para>
+<screen>
+sitename[/exclude,exclude,...]\                   <co id="co.newsfeeds.name"/>
+     :pattern,pattern...[/distrib,distrib...]\    <co id="co.newsfeeds.pattern"/>
+     :flag,flag...\                               <co id="co.newsfeeds.flag"/>
+     :param                                       <co id="co.newsfeeds.param"/>
+</screen>
+<calloutlist>
+<callout arearefs="co.newsfeeds.name">
+<para>
+第一个部分格式为：唯一地址名和排除列表
+</para>
+<para>
+唯一地址名一般配置成远程的主机名，从而保障了名字的唯一性。名称之后的排除列表是可选项，可以在地址名后面跟一个斜线和逗号分隔的排除列表。如果该地址名出现在文章头信息的 PATH 部分，则文章将不被传递。同样，如果文章的PATH部分包含排除列表中的名称，则该文章也不再需要处理。
+</para>
+<para>
+要确定 sitename 和 排除列表很容易，只要分析远程主机的新闻的文件头即可。合理配置，可以有效防止文章的重复粘贴。
+</para>
+</callout>
+<callout arearefs="co.newsfeeds.pattern">
+<para>
+此部分定义需要处理的新闻组列表，可以看做是该地址订阅的新闻组列表。其中的 distribution-list 是可选项，可以用来进一步和文章头部的 Distribution 项匹配，但并不常用。
+</para>
+</callout>
+<callout arearefs="co.newsfeeds.flag">
+<para>
+标志位。常见的标志位有：
+</para>
+<para>
+T? 用于定义传送方式。传送新闻基本上都牵涉两类程式在配合。
+a) innd 整理 (根据 newsfeeds) 往外丢的资讯, 以 file, channel, log, funnel, program 等几种型式呈现. ( innd 有时也整理提供一些 local, 不外传的资讯, 如 overchan, ..);
+b) 不同的传送程式, 撷取不同的资讯, 将 news articles 往外传。
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Tf
+</para>
+<para>
+File mode: 前者写一个 batch file (per site), 後者事後再根据这一个 batch file, 取出必要的资讯, 往外传 articles. 如 nntpsend/innxmit。最后一个域param，为文件名。
+</para>
+</listitem>
+<listitem>
+<para>
+Tl
+</para>
+<para>
+Log entry: innd 每收到一篇 article, 都会有一笔 log (/var/log/news/news), 其中记有哪一些 site (all), 要这一篇  articles, 然後对应的程式, 可以到这个 log, 取出所要的资讯. 目前最常见的程式 nntplink (log mode), 假设可能有□N 个下游站(但所要的 newsgroups, 不见得相同), 用这个方式, 就会有 N 个程式被跑起来, 都根据同一个 log file, 来传送.
+</para>
+</listitem>
+<listitem>
+<para>
+Tm
+</para>
+<para>
+Funnel mode: 漏斗方式。是前两者的折衷. 如果下游站多, 待外传的 articles 量多, 使用 file mode 使 disk I/O 太多,(每一个 site 个别运作. ) 使用 log mode 可能又效率不高. funnel mode 通常都需配合 exploder 程式来运作。
+</para>
+<para>
+funnel(漏斗) file: 把好几个 out.going 的资讯, 汇集成一个 file.
+</para>
+<para>
+exploder 程式, 将 funnel file, "展开", 取出必要的资讯,往各别站传.
+</para>
+</listitem>
+<listitem>
+<para>
+Tc
+</para>
+<para>
+前面三种, (a) 和 (b) 是分开 run 的程式。 channel(通道) mode, 则是 两者同时在跑. OS 上列的 concurrent processes, (想像一下, Unix 上 pipeline 程式组的运作方式)。目前比较常见的, 就是 innd (channel mode) 配 nntplink (stdin).
+</para>
+</listitem>
+<listitem>
+<para>
+Tp
+</para>
+<para>
+程序模式。类似于 Channel 模式, 不过是 one-shot mode. 理论上 channel mode, (a) 和 (b) 一直跑. 但 program mode, 只有在一篇 articles 进来时, innd 才会去 fork 一个 (b) 的程式来处里, 之後, (b) 自动结束, 就 exit.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+W？
+</para>
+<para>
+通过文件、通道等喂信，这个标记用来确定写入什么信息。
+</para>
+</callout>
+<callout arearefs="co.newsfeeds.param">
+<para>
+第四部分作为参数传递，根据第三部分的选项，而有不同意义。如：对于 文件方式的feed（file feeds，Tf），本部分为相应的文件名；对于漏洞方式（funnel feeds，Tm）方式，则为某一已经定义的 feed 配置项；对于 channel feeds (Tc)，本部分则是要运行的相应的处理程序。
+</para>
+</callout>
+</calloutlist>
+<screen>
+ME:!*/!local,!collabra-internal::
+</screen>
+<para>
+配置项 ME，是必不可少的一个配置项，有着特殊作用。其 newsgroup pattern 部分（本例为“!*”），将加到所有其它的配置项的 newsgroup pattern 的前面，定义了确省的向外喂信的新闻组列表。亦即定义所有 site, 共同的 pre-subscription list。
+</para>
+<para>
+而其 distribution pattern 则通过匹配文章头部的 Distribution 域，确定允许接收哪些文章。不过distribution 作为一个限制流传的功能, 很少有人用，已几乎名存实亡。
+</para>
+<screen>
+<![CDATA[
+remote.example.com/news.example.com\
+    :<newsgroups>\
+    :Tf,Wnm:
+]]>
+</screen>
+<para>
+这条配置项，将对匹配的文章的 Message-ID, storage token 写入文件 ~news/spool/outgoing/remote.example.com。crontab 中的配置将会定期根据文件外发数据。
+</para>
+
+<screen>
+<![CDATA[
+    innfeed!\
+        :!*\
+        :Tc,Wnm*:/usr/local/news/bin/startinnfeed -y
+
+    remote.example.com/news.example.com\
+        :<newsgroups>\
+        :Tm:innfeed!
+]]>
+</screen>
+<para>
+funnel feed 示例，注意 innfeed 后面的感叹号。
+</para>
+<para>
+上例采用 innfeed 向外部服务器 remote.example.com 喂信。正确运行 innfeed 还需要配置文件 innfeed.conf。
+</para>
+
+</sect3>
+
+</sect2>
+
+<sect2><title>存储方式</title>
+<para>
+对于如何管理文章的存储方式，有四种存储方法，可供选择。
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+tradspool
+</para>
+<para>
+在INN 2.0之前就已经使用的存储方式。文章以单独的文件存储，并分布在基于新闻组名的目录中。这种存储方式非常简单，并且很多第三方的INN插件依赖这种存储方式。缺点是效率不高。
+</para>
+</listitem>
+<listitem>
+<para>
+timehash 
+</para>
+<para>
+文章也是以单独的文件存储，但是目录名依据文章的时间而确定。这就保障了一个目录下不会存在有过多的文件。缺点是依旧没有解决过多文件操作造成的效率地下，而且文件的存储方式决定了难以像 tradspool 方式那样确定某个新闻组的文章数量和手工修改之。
+</para>
+</listitem>
+<listitem>
+<para>
+timecaf
+</para>
+<para>
+类似于 timehash，文章根据时间分类。不同点是，不再每篇文章一个文件，取而代之的是使用一个文件来存储。缺点是更难以理解和手工修改服务器端的存储结构，而且作为一种新的存储方式，并没有被广泛使用和测试。
+</para>
+</listitem>
+<listitem>
+<para>
+cnfs
+</para>
+<para>
+文章存储在预先定义好的文件缓冲区中，循环使用文件缓冲区，缓冲区满则覆盖前面的文章，因而对于 cnfs 存储方式，文章的过期设置比较特殊，且没有那么重要。
+</para>
+</listitem>
+</itemizedlist>
+
+<para>
+配置文件 <filename>storage.conf</filename> ：用来配置存储方式。
+</para>
+
+<para>
+该配置文件由一个或多个存储配置规则构成。
+</para>
+
+<screen>
+
+method &lt;methodname&gt; {                           <co id="co.store.method"/>
+     class: &lt;storage_class&gt;                     <co id="co.store.class"/>
+     newsgroups: &lt;wildmat&gt;                      <co id="co.store.newgroup"/>
+     size: &lt;minsize&gt;[,&lt;maxsize&gt;]
+     expires: &lt;mintime&gt;[,&lt;maxtime&gt;]
+     options: &lt;options&gt;
+}
+
+</screen>
+<calloutlist>
+<callout arearefs="co.store.method">
+<para>
+下列可用的存储方式的一种：timecaf, timehash, cnfs, tradspool 和 trash。对于符合该规则的新闻组使用该储存方式。
+</para>
+</callout>
+<callout arearefs="co.store.class">
+<para>
+该存储配置规则的 ID。在整个配置文件中保持唯一的一个数字。这个 ID 被配置文件 <filename>expire.ctl</filename> 文件引用，对该存储规则设置过期策略。
+</para>
+</callout>
+<callout arearefs="co.store.newgroup">
+<para>
+用来匹配新闻组名。如果 inn.conf 中配置了 storeonxref: true，则和文章 header 中的 Xref 去匹配；否则（确省情况），和文章 header 中的Newsgroups匹配。
+</para>
+</callout>
+</calloutlist>
+
+<itemizedlist>
+<listitem>
+<para>
+修改文件<filename>etc/storage.conf</filename>中加入如下内容。
+</para>
+<screen>
+<![CDATA[
+method tradspool {
+	newsgroups: *
+	class: 1
+}
+]]>
+</screen>
+<para>
+tradspool 是最为简单的一种存储方式，我们也可以使用另外一种比较简单，但效率更高的存储方式 timehash。如下：
+</para>
+<screen>
+<![CDATA[
+method timehash {
+        newsgroups: *
+        class: 0
+}
+]]>
+</screen>
+<para>
+还有其它存储方式，如 CNFS 效率更高，但更为复杂。
+</para>
+</listitem>
+<listitem>
+<para>
+创建文件 <filename>spool/tradspool.map</filename>
+</para>
+<screen>
+$ <command>touch spool/tradspool.map</command>
+</screen>
+</listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="inn-expire"><title>文档的过期设置</title>
+<sect3><title>expire.ctl</title>
+<para>
+配置文件 <filename>expire.ctl</filename>，控制文章的过期设置
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+全局的设置
+</para>
+<screen>
+/remember/:10
+</screen>
+<para>
+history 文件保持 Message-IDs 的时间。在这段时间内，将不允许相同 Message-IDs 的文章进入，防止重复粘贴。
+</para>
+</listitem>
+<listitem>
+<para>
+当 inn.conf 中有配置：groupbaseexpiry: false 时的语法
+</para>
+<screen>
+<![CDATA[
+ <storage_class>:<keep>:<default>:<purge>
+]]>
+</screen>
+
+<para>
+&lt;storage_class&gt; 是在 storage.conf 中存储配置定义的 class number。
+</para>
+<para>
+对于普通的文章（没有在头信息中定义 Expires），&lt;default&gt;定义了文章保持的天数。
+</para>
+<para>
+对于在头信息中定义了 Expires 的文章，&lt;keep&gt;和&lt;purge&gt;有作用。
+</para>
+<para>
+不管文章头信息中的 Expires 日期，所有文章至少要保持 &lt;keep&gt; 天，并且在 &lt;purge&gt; 天后过期，即使 Expires 定义的时间更长。
+</para>
+<para>
+如果 &lt;default&gt; 定义为 never，则没有定义 Expires 头信息的普通文章永不过期；
+</para>
+<para>
+如果 &lt;keep&gt; 定义为 never，则定义了 Expires 头信息的文章永不过期。忽略  &lt;purge&gt; 的配置。
+</para>
+<para>
+如果 &lt;purge&gt; 定义为 never，则定义了 Expires 头信息的文章永不过期。
+</para>
+
+</listitem>
+
+<listitem>
+<para>
+当 inn.conf 中有配置：groupbaseexpiry: true 时的语法
+</para>
+<screen>
+<![CDATA[
+ <wildmat>:<flag>:<keep>:<default>:<purge>
+]]>
+</screen>
+<para>
+&lt;wildmat&gt; 匹配新闻组名。注意 &lt;wildmat&gt; 只能有一个表达式，且不能使用 ! 和 @。
+</para>
+<para>
+&lt;flag&gt; 可以取值为：M（受控）, U（非受控）, A（任何一种）。
+</para>
+<para>
+&lt;keep&gt;，&lt;default&gt;，&lt;purge&gt; 的含义和前面的一样。
+</para>
+</listitem>
+</itemizedlist>
+
+<para>
+news expire 的过程：expire 五部曲
+</para>
+
+<orderedlist>
+<listitem>
+<para>
+expire
+</para>
+<para>
+扫描 history file, 找出应被 expire 的 article pathname, 写到 /home/inn/log/expire.rm. 此一过程很短, 只要10分钟即可找到10万封该 expire 掉的 article.
+</para>
+</listitem>
+<listitem>
+<para>
+expireover
+</para>
+<para>
+读入 /home/inn/log/expire.rm, 把此档案内所有 entry 位於 overview db 对应之 index 移除.
+</para>
+</listitem>
+<listitem>
+<para>
+fastrm
+</para>
+<para>
+根据 /home/inn/log/expire.rm, 把内含之 pathname 全数移除, 相当於完成:
+<command>cat /home/inn/log/expire.rm | xargs rm</command>
+</para>
+</listitem>
+<listitem>
+<para>
+expired entries in history removed,  active renumber,
+</para>
+<para>
+疑除该 expire 掉 article 的 history entries,
+</para>
+<para>
+rebuild dbz database (history.pag,.dir)
+</para>
+<para>
+根据 spool 内 article low/high number 调整 active 的 low/high number.
+</para>
+<para>
+此过程约数分钟, 此时不接受 nnrp connection request, post request 会延迟.
+</para>
+</listitem>
+<listitem>
+<para>
+innstat
+</para>
+<para>
+run awk -f /home/inn/news/innlog.awk /home/inn/log/news.notice
+</para>
+<para>
+df spool-dir, overview-dir, newslib-dir, out.going-dir
+</para>
+<para>
+cat /home/inn/log/errlog
+</para>
+<para>
+mail result to user usenet.
+</para>
+</listitem>
+</orderedlist>
+
+</sect3>
+
+<!--sect3><title>用 controlchan 处理 control 消息</title>
+<para>
+配置文件 inn.conf 中的 usecontrolchan：
+</para>
+<para>
+Whether to handle control messages (other than cancel) in an external program rather than internally in
+innd(8).  Enabling this is highly recommended, as INN's internal control message handling can cause perfor-
+mance problems and behaves very poorly under heavy load.  If you want to enable this, you also must set up
+a channel feed to controlchan(8) in newsfeeds(5) and ensure that the group "control.cancel" exists on your
+server.  You may also have to do a few additional things to allow controlchan to work correctly; see con-
+trolchan(8) for the details.  This is a boolean value and the default is false.
+</para>
+
+<para>
+       The  file <pathetc in inn.conf>/control.ctl is used to determine what action is taken when a control message is
+       received.  If <usecontrolchan in inn.conf> is ``true'', it is read by the  controlchan  script,  which  can  be
+       invoked  as  channel  program by innd(8).  When control.ctl is modified, controlchan notices this automatically
+       and reload it.  If <usecontrolchan in inn.conf> is ``false'', it is read by the parsecontrol script,  which  is
+       called by all the control scripts.  (For an explanation of how the control scripts are invoked, see innd(8).)
+</para>
+
+<para>
+controlchan
+</para>
+<para>
+       Controlchan  removes the responsibility for handling control messages (except cancels) from innd(8) and instead
+       processes them from a channel or file feed.  To reduce load, controlchan keeps a copy of control.ctl(5) in mem-
+       ory  and  checks  permissions  (including  any  required PGP headers) before any scripts are called.  Also, the
+       default (``bad message'') case is handled internally.  The ``drop'' case is handled with far less fuss.
+
+       Normally, controlchan is configured in newsfeeds(5) and invoked from innd(8).  And you  need  to  set  <usecon-
+       trolchan  in  inn.conf>  to  ``true''.  Controlchan reports all log message through syslog(3), if possible.  To
+       enable syslog(3)'ging, you will need to have run ``h2ph'' on your system include files at some point  (this  is
+       required to make ``Sys::Syslog'' work).  If you have not done so, do this:
+            cd /usr/include
+            h2ph * sys/*
+
+       If you run FreeBSD, you will need to run the following in addition:
+
+            h2ph machine/*
+</para>
+
+</sect3-->
+
+</sect2>
+
+</sect1>
+
+<sect1 id="maintain-inn"><title>维护新闻组</title>
+
+<sect2><title>inncheck</title>
+<para>
+inncheck 检查的文件有：
+</para>
+<screen>
+active
+control.ctl
+expire.ctl
+incoming.conf
+inn.conf
+moderators
+newsfeeds
+overview.fmt
+nntpsend.ctl
+passwd.nntp
+</screen>
+<para>
+inncheck -v 显示了检查的相近过程：
+</para>
+<screen>
+$ inncheck -v
+Looking at /usr/local/news/db/active...
+Looking at /usr/local/news/etc/control.ctl...
+Looking at /usr/local/news/etc/expire.ctl...
+Looking at /usr/local/news/etc/incoming.conf...
+Looking at /usr/local/news/etc/inn.conf...
+Looking at /usr/local/news/etc/moderators...
+Looking at /usr/local/news/etc/newsfeeds...
+ME, done.
+Looking at /usr/local/news/etc/nntpsend.ctl...
+Looking at /usr/local/news/etc/overview.fmt...
+Looking at /usr/local/news/etc/passwd.nntp...
+Looking at /usr/local/news/etc/readers.conf...
+</screen>
+
+</sect2>
+
+
+<sect2><title>创建新闻组</title>
+<screen>
+$ ctlinnd newgroup local.announce        y johnson.AT.worldhello.net
+$ ctlinnd newgroup local.test            y johnson.AT.worldhello.net
+
+... 修改文件 newsgroups ...
+$ cat &gt;&gt; db/newsgroups &lt;&lt; EOF
+local.announce          Announcement for all.
+local.test              For newbie test.
+EOF
+</screen>
+
+<para>
+或者
+</para>
+<screen>
+$ ctlinnd pause 'edit active'
+$ vi active
+$ inncheck -v active
+$ ctlinnd reload 'edit active'
+$ ctlinnd go 'edit active'
+
+... 修改文件 newsgroups ...
+</screen>
+</sect2>
+
+<sect2><title>删除新闻组</title>
+<para>
+如果只有一两个 newsgroups 要砍, 可直接执行 <command>ctlinnd rmgroup &lt;group-name&gt;</command> 来砍, 如果一次有好几百个 newsgroups 要砍, 请依照以下步骤:
+</para>
+<screen>
+$ ctlinnd pause "removing idle newsgroups"
+... 改动 active 文件，删除相应的行
+$ ctlinnd reload active "removing idle newsgroups"
+$ ctlinnd go "removing idle newsgroups"
+</screen>
+</sect2>
+
+
+<sect2><title>备份</title>
+<para>
+待续...
+</para>
+</sect2>
+</sect1>
+
+
+<sect1 id="client"><title>访问新闻组</title>
+<sect2><title>客户端</title>
+<itemizedlist>
+<listitem>
+<para>
+Outlook Express
+</para>
+<para>
+新闻组入门，最好用 OE。
+</para>
+</listitem>
+<listitem>
+<para>
+Forte Agent
+</para>
+<para>
+高级用户，可以考虑使用环保产品：Agent。
+</para>
+<para>
+<ulink url="http://www.zjg.js.cn/teach/news/">如何用Agent阅读INTERNET上的新闻组</ulink>
+</para>
+<para>
+<ulink url="http://www.southcn.com/it/jyzt/200207151802.htm">Agent 的多语言设置</ulink>
+</para>
+</listitem>
+</itemizedlist>
+</sect2>
+
+<sect2><title>可用的新闻服务器</title>
+<itemizedlist>
+<listitem>
+<para>
+希网网络
+</para>
+<para>
+<ulink url="news://news.yaako.com">news://news.yaako.com</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+新帆
+</para>
+<para>
+<ulink url="news://news.newsfan.net">news://news.newsfan.net</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+万千
+</para>
+<para>
+<ulink url="news://news.webking.com.cn">news://news.webking.com.cn</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+东方热线
+</para>
+<para>
+<ulink url="news://news.cnnb.net">news://news.cnnb.net</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+NetFront
+</para>
+<para>
+<ulink url="news://freenews.netfront.net">news://freenews.netfront.net</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+Hong Kong LUG
+</para>
+<para>
+<ulink url="news://news.linux.org.hk">news://news.linux.org.hk</ulink>
+</para>
+</listitem>
+</itemizedlist>
+</sect2>
+</sect1>
+
+<sect1 id="why-not-news"><title>还用新闻组么？</title>
+<para>
+新闻组固然会给沟通带来便利之处，但是也有不足，采用如下方法来增强新闻组，甚至取代新闻组。
+</para>
+<itemizedlist>
+<listitem>
+<para>
+无法通过 URL 定位到具体的文章，只能笼统的说在某某版在几月几号有关于这个问题的一篇文章。通过将 News 转换为 Web 存档，可以解决这个难题。
+参见：<ulink url="http://www.worldhello.net/doc/search_engine/webarchive.html">Web Archive Howto</ulink>。
+</para>
+</listitem>
+<listitem>
+<para>
+不能进行检索。没有检索就不能叫做成功的知识管理系统，建立新闻组到网页的存档为建立全文检索准备了条件。
+参见：<ulink url="http://www.worldhello.net/doc/search_engine/webarchive.html">Web Archive Howto</ulink>。
+</para>
+</listitem>
+<listitem>
+<para>
+不能实现内容的推，重要的通知信息，还要经常提醒用户上来查看。邮件列表是一个更好的替代方案。
+参见：<ulink url="http://www.worldhello.net/doc/maillist_howto/">Maillist Howto</ulink>。
+</para>
+</listitem>
+<listitem>
+<para>
+配置负责，安全性差
+</para>
+<para>
+配置起来非常麻烦，否则也不会写这么一篇文档专题介绍。再有从安全性考虑，新闻组作为单独的一项服务要开放新的服务端口，增加了网络安全隐患，而邮件列表借助电子邮件，而不再单独开辟端口。
+</para>
+<para>
+有些信息需要限制在一定的范围内，禁止非授权用户订阅。新闻组的权限配置非常麻烦，而邮件列表则简单的多，只要控制订阅邮件列表的用户名单，限制订阅的用户即可。
+</para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<sect1 id="mail-news-gw"><title>Mail-News Gateway</title>
+<para>
+如果想要使新闻组和邮件列表协同工作，就涉及到 Mail-News Gateway，即Mail和News的互转。
+</para>
+
+<sect2><title>mailpost</title>
+<para>
+inn 提供的 perl 脚本 —— mailpost，可以完成邮件到新闻组的转换。配置方法：
+</para>
+<orderedlist>
+<listitem>
+<para>
+配置邮件别名
+</para>
+<para>
+在 sendmail 的别名文件中加入邮件别名，如：
+</para>
+<screen>
+test:	"|/usr/local/news/bin/mailpost -r mailpost local.test"
+</screen>
+<para>
+发往 test 的邮件，将由 mailpost 发到新闻组 local.test。"-d mailpost" 的目的是为文章的信头 Distribution 部分加上 mailpost 以作标记，并在后面的 news2mail 中禁止此类别的新闻以邮件形式外发，防止死循环。
+</para>
+</listitem>
+<listitem>
+<para>
+执行 newalias
+</para>
+<para>
+使邮件别名生效。
+</para>
+</listitem>
+<listitem>
+<para>
+如果 sendmail 配置了 smrsh，需要将 mailpost 加入可用程序列表中。
+</para>
+<screen>
+ln -s /usr/local/news/bin/mailpost /usr/adm/sm.bin/
+</screen>
+</listitem>
+<listitem>
+<para>
+检查 inews 的执行权限
+</para>
+<para>
+mailpost 脚本通过 inews，执行 post 动作，因此运行 sendmail 的用户需要具有 inews 的执行权限。或者修改 mail 用户（亦可能为其它用户），使之属于 news 组，或者 <command>chmod a+x /usr/local/news/bin/inews</command>。
+</para>
+</listitem>
+</orderedlist>
+
+</sect2>
+
+<sect2><title>news2mail</title>
+<para>
+inn 提供的 perl 脚本 —— news2mail，可以将新闻组文章以邮件方式转发。
+</para>
+<para>
+new2mail 通过在配置文件 newsfeeds 中，添加相应的 channel feed 实现。还有一个重要的配置文件 news2mail.cf，用来和相应的 channel feed 的地址名匹配，提供相应的邮件地址。
+</para>
+<para>
+例如：下面的示例，将新闻组：internal.list.linux.kernel ，发往邮件地址：linux-kernel@vger.kernel.org 。
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+配置文件：newsfeeds
+</para>
+<screen>
+ME:!*::	<co id="co.news2mail.nf.me"/>
+#  ^^ the exclamation mark is absolutely important, because without it everything will be send out to all feeds, 
+#     also to the mailing lists (again: EVERYTHING) 
+n2m!:!*:Tc,Ac,Wn*:/usr/lib/news/bin/news2mail	<co id="co.news2mail.nf.n2m"/>
+#^^^ this entry only once 
+# 
+#the following entry only once per newsgroup, which should be send out via news2mail 
+news-internal.list.linux.kernel@example.com:internal.list.linux.kernel/!mailpost:Tm,Ac:n2m!	<co id="co.news2mail.nf.tm"/>
+#^^sender email addresse for outgoing mails    ^^the newsgroup           ^        ^^ flags 
+#                                                                        | this is the filter key; every articel which has 
+#                                                                        | this key in his Distribution: header will not be mailed; 
+#                                                                        | all news articles that will enter via mailpost 
+#                                                                        | will have this key in the Distribution: header -> no loop! 
+</screen>
+<calloutlist>
+<callout arearefs="co.news2mail.nf.me">
+<para>
+`!*'部分非常重要，是加在其它 newsfeeds 项的前缀，否则所有的新闻组都要向外喂信。
+</para>
+</callout>
+<callout arearefs="co.news2mail.nf.n2m">
+<para>
+Tc 是 channel 方式，将文章送给外部程序 news2mail 处理；Ac 是禁止外送 Cancel 信件。
+</para>
+</callout>
+<callout arearefs="co.news2mail.nf.tm">
+<para>
+`/mailpost'部分非常重要：防止在新闻组和邮件列表之间发生死循环，一旦信头PATH中包含 mailpost，就不进行喂信，因为该新闻原本来自于邮件。
+</para>
+</callout>
+</calloutlist>
+
+</listitem>
+<listitem>
+<para>
+配置文件：news2mail.cf
+</para>
+<screen>
+#one entry per newsgroup: 
+news-internal.list.linux.kernel@example.com          linux-kernel@vger.kernel.org 
+#^^ sender address                                      ^^ recipient addresse 
+# it is important that the first field of both files is identical (sender) 
+</screen>
+</listitem>
+</itemizedlist>
+
+<para>
+new2mail 为防止DOS攻击，将邮件排入队列，而不是直接发送。因此邮件发送是否及时，由 sendmail 启动时的 -q 参数决定，或者将 "<command>sendmail -q</command>" 放入 crontab。
+但是我在调试过程中，发现以参数 "-odq" 调用 sendmail，邮件队列中没有邮件，邮件发送失败！因此需要修改脚本 news2mail，修改调用 sendmail 的参数。
+</para>
+<para>
+还有在调试 news2mail 过程中，发现 perl 脚本的 syslog 调用并不能出现预期结果。原因是 syslogd 启动时默认不接收外部的 syslog 事件，导致 perl 的 syslog 调用不能显示。修改文件 <filename>/etc/sysconfig/syslog</filename>，加上 '-r' 参数启动 syslogd。
+</para>
+<para>
+参见：<ulink url="http://batleth.sapienti-sat.org/projects/news2mail/news2mail-FAQ-en.html">FAQ News2Mail and Mail2News Gateway</ulink>。
+</para>
+
+</sect2>
+</sect1>
