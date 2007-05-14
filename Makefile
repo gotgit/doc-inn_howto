@@ -3,13 +3,19 @@
 ############################################################
 
 # TOOLS_DIR is the place where Makefile.base and other scripts present.
-TOOLS_DIR := ../../tools
+TOOLS_DIR := /opt/docbook/tools
+
+# DOCUMENT_ROOT is the prefix of file location.
+DOCUMENT_ROOT ?= 
 
 # XML_SRCDIR defines the place where XMLs present.
 XML_SRCDIR := .
 
 # XML_INDEX_NAME defines the main XML index page without extension.
 XML_INDEX_NAME := index
+
+# MM_SRC is FreeMind .mm filename
+MM_SRC :=
 
 # RENDER_DIR defines where rendered html, rtf, pdf present.
 RENDER_DIR := .
@@ -32,11 +38,18 @@ INSTALL_OTHERS :=
 
 HTML_CHUNK_DIR := $(RENDER_DIR)
 
-# Bugs of FOP may cause PDF make failed. if set to yes, not make pdf.
-IGNORE_PDF_MAKE := no
+# Disable certain backends
+#IGNORE_HTML_MAKE := yes
+#IGNORE_HTML-CHUNK_MAKE := yes
+#IGNORE_CHM_MAKE := yes
+#IGNORE_PDF_MAKE := yes
+#IGNORE_RTF_MAKE := yes
+#IGNORE_TXT_MAKE := yes
 
 # where or not create version.xml. if set to yes, generate version.xml
 CREATE_VERSION_SOURCE := yes
+
+DOCBOOK_XSL_ROOT := http://www.worldhello.net/docbook/xsl/current
 
 ############################################################
 # Include Makefile.base
