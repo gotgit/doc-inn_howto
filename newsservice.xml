@@ -1159,7 +1159,7 @@ inn.conf - Configuration data for InterNetNews programs
 修改文件<filename>etc/inn.conf</filename>，修改之处已经加亮显示：
 </para>
 <screen>
-##  $Id: newsservice.xml,v 1.6 2004/02/03 06:34:37 jiangxin Exp $
+##  $Id$
 ##
 ##  inn.conf -- INN configuration data
 ##
